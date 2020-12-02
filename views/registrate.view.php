@@ -19,32 +19,14 @@
 </head>
 
 <body>
-  <?php var_dump(
-  $tipo_usuario, 
-  $nombre,
-  $segundo_nombre,
-  $sexo,
-  $email,
-  $nombre_usuario,
-  $password,
-  $password_2); ?>
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="formulario">
 
     <h2 class="subtitulo">Registro</h2>
 
-    <label for="" class="formulario-label">Tipo Usuario:</label>
-    <select name="tipo_usuario" class="form-control">
-
-      <option>Administrador</option>
-      <option>Comprador</option>
-      <option>Vendedor</option>
-
-    </select>
-
     <label for="" class="formulario-label">Nombre:</label>
     <input type="text" name="nombre" class="form-control" id="nombre" required />
-    <label for="" class="formulario-label">Segundo Nombre:</label>
-    <input type="text" name="nombre2" class="form-control" id="nombre" required />
+    <label for="" class="formulario-label">Apellido:</label>
+    <input type="text" name="apellido" class="form-control" id="nombre" required />
 
     <label for="" class="formulario-label">Sexo:</label>
     <input type="radio" id="male" name="genero" value="m">
@@ -68,7 +50,7 @@
     <label for="" class="formulario-label">Repite la contraseña:</label>
     <input type="password" name="password2" class="form-control" required />
 
-    <input type="submit" class="formulario-submit" />
+    <input type="submit" value="Enviar" class="formulario-submit" />
 
     <!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
     <?php if (!empty($errores)) : ?>

@@ -12,15 +12,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    
     $tipo_usuario = $_POST['tipo_usuario'];
     $nombre= $_POST['nombre'];
-    $segundo_nombre= $_POST['nombre2'];
+    $segundo_nombre= $_POST['apellido'];
     $sexo= $_POST['genero'];
     $email= $_POST['correo'];
-    $nombre_usuario = $_POST['nick_name'];//filter_var(strtolower($_POST['usuario']),FILTER_SANITIZE_STRING);
+    $nombre_usuario = filter_var(strtolower($_POST['nick_name']),FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
     $password_2 = $_POST['password2'];
 
     $errores = '';
-
 
     if(empty($nombre_usuario) or empty($password) or empty($password_2)){
 
@@ -34,8 +33,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 echo "Error: ". $e->getMessage();
         }
 
-        $statement = $conexion->prepare('SELECT * FROM users WHERE nick_name = :nombre_usuario LIMIT 1');
-        $statement->execute(array(':nombre_usuario' => $nombre_usuario));
+        $statement = $conexion->prepare('SELECT * FROM user WHERE nick_name = :nick_name LIMIT 1');
+        $statement->execute(array(':nick_name' => $nombre_usuario));
 
         $resultado = $statement->fetch();// fetch() devuelve false si no hay un resultado
 
@@ -53,26 +52,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($errores == ''){
 
-           $statement = $conexion->prepare('INSERT INTO users ( user_type, nam,last_name, genre, email, nick_name, pass) 
-                                            VALUES (:tipo_usuario, :nombre, :segundo_nombre, :sexo, :email, :nombre_usuario, :pass');
-           $statement->bindParam(':tipo_usuario' ,$tipo_usuario);
-           $statement->bindParam(':nombre',$nombre);
-           $statement->bindParam(':segundo_nombre',$segundo_nombre);
-           $statement->bindParam(':sexo' , $sexo);
-           $statement->bindParam(':email',$email);
-           $statement->bindParam(':nombre_usuario' , $nombre_usuario);
-           $statement->bindParam(':pass', $password);
+           $statement = $conexion->prepare('INSERT INTO user ( id, order_id, user_type, name, last_name, genre, email, nick_name, password) 
+                                            VALUES (null, null, null, :name, :last_name, :genre, :email, :nick_name, :password)');
 
-           $statement->execute();/*(array(
-                                    ':tipo_usuario' => $tipo_usuario,
-                                    ':nombre' => $nombre,
-                                    ':segundo_nombre' => $segundo_nombre,
-                                    ':sexo' => $sexo,
+           $statement->execute(array(
+                                    ':name' => $nombre,
+                                    ':last_name' => $segundo_nombre,
+                                    ':genre' => $sexo,
                                     ':email'=>$email,
-                                    ':nombre_usuario' => $nombre_usuario,
-                                    ':pass'=> $password)); */
+                                    ':nick_name' => $nombre_usuario,
+                                    ':password'=> $password)); 
 
-            //header('Location: login.php');
+           header('Location: login.php');
         }
 
 }
