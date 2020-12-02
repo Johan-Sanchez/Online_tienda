@@ -22,14 +22,14 @@
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="formulario">
     <h2 class="subtitulo">Login</h2>
     <label for="" class="formulario-label">Direccion de correo electronico: </label>
-    <input type="text" name="user-name" class="form-control" id="user-name" required />
+    <input type="text" name="correo" class="form-control" id="user-name" required />
     <div class="form-pswd-container">
       <label for="" class="formulario-label">Contraseña:</label>
       <a href="#">¿Olvidaste tu contraseña?</a>
     </div>
     <input type="password" name="password" class="form-control" required />
 
-    <input type="submit" class="formulario-submit" />
+    <input type="submit" value="Enviar" class="formulario-submit" />
 
     <div id="aviso-legal">
       <p>
