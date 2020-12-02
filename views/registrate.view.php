@@ -36,8 +36,6 @@
     <input type="radio" id="other" name="genero" value="o">
     <label for="other">Other</label>
 
-
-
     <label for="" class="formulario-label">Correo electronico:</label>
     <input type="text" name="correo" class="form-control" required />
 
