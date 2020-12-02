@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.formulario {
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.formulario .titulo {
+  font-size: 60px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-top: 0;
+  /* color: rgba(0, 0, 0, .7);*/
+}
+.formulario-label,
+.form-control,
+.formulario-submit {
+  display: block;
+  width: 100%;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.form-control {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+}
+
+.formulario-label {
+  padding-left: 15px;
+
+  color: rgba(0, 0, 0, 1);
+}
+
+.form-pswd-container {
+  display: flex;
+}
+
+.form-pswd-container > a {
+  clear: both;
+  display: inline-block;
+
+  white-space: nowrap;
+}
+
+.formulario-submit {
+  color: #fff;
+  background-color: rgba(30, 34, 33, 1);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+.inicio {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  color: #fff;
+  text-align: center;
+  border: 2px solid;
+  text-decoration: none;
+}
+
+#aviso-legal {
+  margin-top: 1rem;
+}
+
+#aviso-legal > p:nth-child(2) {
+  text-align: center;
+}
+
+#contacto {
+  margin-top: 3rem;
+}
