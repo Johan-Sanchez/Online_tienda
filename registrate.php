@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $statement = $conexion->prepare('SELECT * FROM user WHERE nick_name = :nick_name LIMIT 1');
         $statement->execute(array(':nick_name' => $nombre_usuario));
 
-        $resultado = $statement->fetch();// fetch() devuelve false si no hay un resultado
+        $resultado = $statement->fetch();
 
         if($resultado != false){
             $errores = '<li>El nombre de usuario ya exite</li>';
