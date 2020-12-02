@@ -1,3 +1,7 @@
 <?php  
 
-define('ROUTE', ROUTE); ?>
+    
+    define('ROUTE', 'http://localhost/CursoPHP/Online_tienda/'); 
+    
+
+?>

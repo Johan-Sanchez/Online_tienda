@@ -32,9 +32,9 @@
       href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="http://localhost/CursoPHP/Online_tienda/css2/mujer.css" />
-    <script src="http://localhost/CursoPHP/Online_tienda/js/jquery-3.5.1.js"></script>
-    <script src="http://localhost/CursoPHP/Online_tienda/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php ROUTE?>css2/mujer.css" />
+    <script src="<?php ROUTE?>js/jquery-3.5.1.js"></script>
+    <script src="<?php ROUTE?>js/bootstrap.min.js"></script>
   </head>
   <body>
     <header class="header" id="inicio">
@@ -47,8 +47,8 @@
           <a name="inicio"></a>
         </div>
         <div class="top-right-header">
-          <a href="registro.php">Registro</a>
-          <a href="login.php">Login</a>
+          <a href="<?php ROUTE?>registro.php">Registro</a>
+          <a href="<?php ROUTE?>login.php">Login</a>
         </div>
       </nav>
       <div class="contenedor-head">
@@ -83,39 +83,39 @@
         </div>
         <section class="lista">
           <div class="products_item" category-all="camisas">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2/camisa.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2/camisa.jpg" alt="" />
             <a href="#">Camisas casual</a>
           </div>
           <div class="products_item" category-all="camisas">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\camisac.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\camisac.jpg" alt="" />
             <a href="#">Camisas manga corta </a>
           </div>
           <div class="products_item" category-all="camisas">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\camisaco.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\camisaco.jpg" alt="" />
             <a href="#">Camisas manga corta</a>
           </div>
           <div class="products_item" category-all="pantalones">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\pantalon.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\pantalon.jpg" alt="" />
             <a href="#">Pantalones casual</a>
           </div>
           <div class="products_item" category-all="pantalones">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\pantalon2.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\pantalon2.jpg" alt="" />
             <a href="#">Pantalones jeans</a>
           </div>
           <div class="products_item" category-all="chaquetas">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\chaqueta.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\chaqueta.jpg" alt="" />
             <a href="#">Chaquetas azul</a>
           </div>
           <div class="products_item" category-all="chaquetas">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\chaqueta2.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\chaqueta2.jpg" alt="" />
             <a href="#">Chaquetas levi´s</a>
           </div>
           <div class="products_item" category-all="zapatos">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\zapatosh.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\zapatosh.jpg" alt="" />
             <a href="#">Zapatos cafes</a>
           </div>
           <div class="products_item" category-all="zapatos">
-            <img src="http://localhost/CursoPHP/Online_tienda/imagen2\zapatosh2.jpg" alt="" />
+            <img src="<?php ROUTE?>imagen2\zapatosh2.jpg" alt="" />
             <a href="#">Zapatos azules</a>
           </div>
         </section>
