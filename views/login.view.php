@@ -13,33 +13,44 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="<?php ROUTE?>css2/registro.css"/>
-  <link rel="stylesheet" href="<?php  ROUTE ?>css2/estilos.css">
+  <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css" />
+  <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
-  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="formulario">
-    <h2 class="subtitulo">Login</h2>
-    <label for="" class="formulario-label">Direccion de correo electronico: </label>
-    <input type="text" name="correo" class="form-control" id="user-name" required />
-    <div class="form-pswd-container">
-      <label for="" class="formulario-label">Contraseña:</label>
-      <a href="#">¿Olvidaste tu contraseña?</a>
-    </div>
-    <input type="password" name="password" class="form-control" required />
+  <div class="formulario">
 
-    <input type="submit" value="Enviar" class="formulario-submit" />
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST">
 
-    <div id="aviso-legal">
-      <p>
-        Al crear una cuenta, aceptas las <a href="#">Condiciones de Uso</a> y
-        el <a href="#">Aviso de Privacidad</a>
-      </p>
-      <p>¿Eres nuevo?</p>
-      <a href="<?php ROUTE?>registrate.php"><input type="submit" class="formulario-submit" value="Crear una cuenta" /></a>
-    </div>
-  </form>
+      <h2 class="subtitulo">Login</h2>
+      
+      <label for="" class="formulario-label">Direccion de correo electronico: </label>
+      <input type="text" name="correo" class="form-control" id="user-name" required />
+      <div class="form-pswd-container">
+        <label for="" class="formulario-label">Contraseña:</label>
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+      <input type="password" name="password" class="form-control" required />
+
+      <input type="submit" value="Enviar" class="formulario-submit" />
+
+      <div id="aviso-legal">
+        <p>
+          Al crear una cuenta, aceptas las <a href="#">Condiciones de Uso</a> y
+          el <a href="#">Aviso de Privacidad</a>
+        </p>
+
+      </div>
+    </form>
+
+    <p>¿Eres nuevo?</p>
+    <a href="<?php ROUTE ?>registrate.php"><input type="submit" class="formulario-submit" value="Crear una cuenta" /></a>
+
+  </div>
+
+
+
 
   <!-- Footer-->
   <footer id="contacto">
@@ -47,7 +58,7 @@
       <div class="contact-us">
         <h2 class="brand">NewOldLooK</h2>
         <p>Comprometidos con el Planeta</p>
-        <a href="<?php ROUTE?>index.php">Inicio</a>
+        <a href="<?php ROUTE ?>index.php">Inicio</a>
       </div>
       <div class="social-media">
         <a href="https://www.facebook.com/" class="social-media-icon">
@@ -69,7 +80,7 @@
     </div>
     <div class="line"></div>
   </footer>
-  <script src="<?php ROUTE?>js/form.js"></script>
+  <script src="<?php ROUTE ?>js/form.js"></script>
 </body>
 
 </html>

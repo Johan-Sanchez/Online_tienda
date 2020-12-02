@@ -10,7 +10,6 @@ if (isset($_SESSION['usuario'])){
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
    
-    $tipo_usuario = $_POST['tipo_usuario'];
     $nombre= $_POST['nombre'];
     $segundo_nombre= $_POST['apellido'];
     $sexo= $_POST['genero'];
@@ -52,14 +51,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($errores == ''){
 
-           $statement = $conexion->prepare('INSERT INTO user ( id, order_id, user_type, name, last_name, genre, email, nick_name, password) 
-                                            VALUES (null, null, null, :name, :last_name, :genre, :email, :nick_name, :password)');
+           $statement = $conexion->prepare('INSERT INTO user ( id, order_id, user_type, name, last_name, email, genre, nick_name, password) 
+                                            VALUES (null, null, null, :name, :last_name,  :email,:genre, :nick_name, :password)');
 
            $statement->execute(array(
                                     ':name' => $nombre,
                                     ':last_name' => $segundo_nombre,
-                                    ':genre' => $sexo,
                                     ':email'=>$email,
+                                    ':genre' => $sexo,
                                     ':nick_name' => $nombre_usuario,
                                     ':password'=> $password)); 
 
