@@ -30,7 +30,7 @@
 
       </div>
       <div class="top-right-header">
-      <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt" ></i>Cerrar Sesion</a>
+        <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
       </div>
     </nav>
     <div class="contenedor-head">
@@ -44,52 +44,36 @@
 
     <div class="store-mujer">
       <div class="category">
-        <a href="#store-mujer" class="category-items" category-all="all">all</a>
+        <a href="#store-mujer" class="category-items" category-all="all">Todo</a>
         <a href="#store-mujer" class="category-items" category-all="camisas">Camisas</a>
         <a href="#store-mujer" class="category-items" category-all="pantalones">Pantalones</a>
         <a href="#store-mujer" class="category-items" category-all="chaquetas">Chaquetas</a>
         <a href="#store-mujer" class="category-items" category-all="zapatos">zapatos</a>
       </div>
+
       <section class="lista">
+
         <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2/camisa.jpg" alt="" />
-          <a href="#">Camisas casual</a>
+
+          <div class="izquierda">
+            <img src="<?php ROUTE ?>imagen2/camisa.jpg" alt="" />
+          </div>
+
+          <div class="derecha">
+            <span>titulo</span><br>
+            <span>usuario</span><br>
+            <span>precio</span><br>
+            <input type="submit" class="formulario-submit" value="Contacto">
+
+          </div>
+
         </div>
-        <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2\camisac.jpg" alt="" />
-          <a href="#">Camisas manga corta </a>
-        </div>
-        <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2\camisaco.jpg" alt="" />
-          <a href="#">Camisas manga corta</a>
-        </div>
-        <div class="products_item" category-all="pantalones">
-          <img src="<?php ROUTE ?>imagen2\pantalon.jpg" alt="" />
-          <a href="#">Pantalones casual</a>
-        </div>
-        <div class="products_item" category-all="pantalones">
-          <img src="<?php ROUTE ?>imagen2\pantalon2.jpg" alt="" />
-          <a href="#">Pantalones jeans</a>
-        </div>
-        <div class="products_item" category-all="chaquetas">
-          <img src="<?php ROUTE ?>imagen2\chaqueta.jpg" alt="" />
-          <a href="#">Chaquetas azul</a>
-        </div>
-        <div class="products_item" category-all="chaquetas">
-          <img src="<?php ROUTE ?>imagen2\chaqueta2.jpg" alt="" />
-          <a href="#">Chaquetas levi´s</a>
-        </div>
-        <div class="products_item" category-all="zapatos">
-          <img src="<?php ROUTE ?>imagen2\zapatosh.jpg" alt="" />
-          <a href="#">Zapatos cafes</a>
-        </div>
-        <div class="products_item" category-all="zapatos">
-          <img src="<?php ROUTE ?>imagen2\zapatosh2.jpg" alt="" />
-          <a href="#">Zapatos azules</a>
-        </div>
+
       </section>
     </div>
   </div>
+
+  <!--Footer-->
   <footer id="contacto">
     <div class="contenedor footer-content">
       <div class="contact-us">

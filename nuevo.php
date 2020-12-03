@@ -11,8 +11,10 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $nombre = limpiarDatos($_POST['nombre']);
+        $titulo = $_POST['titulo'];
+        $descripcion = limpiarDatos($_POST['descripcion']);
         $precio = $_POST['precio'];
+        $cantidad = $_POST['cantidad'];
         $condicion = $_POST['condicion'];
         $thumb = $_FILES['thumb']['name'];
         
@@ -21,12 +23,14 @@
         /* move_uploaded_file($thumb, $archivo_subido); */
 
         $statement = $conexion->prepare(
-                                        'INSERT INTO products (id, name, price, product_status, thumb) 
-                                        VALUES (null, :name, :price, :product_status, :thumb)'
+                                        'INSERT INTO posts (id, title, description, price, quantity,product_status, thumb) 
+                                        VALUES (null, :title,:description, :price,:quantity, :product_status, :thumb)'
                                         );
         $statement->execute(array(
-            'name' => $nombre,
+            'title' => $titulo,
+            'name' => $descripcion,
             'price' => (int) $precio,
+            'quantity' => (int) $cantidad,
             'product_status' => $condicion,
             'thumb' => $thumb
         ));
