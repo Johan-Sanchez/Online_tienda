@@ -44,7 +44,7 @@
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data" class="formulario" method="post">
                     <h2 class="subtitulo">Publicar Producto</h2>
                     <input type="text" class="form-control" name="titulo" placeholder="Titulo de la publicacion">
-                    <textarea id="" class="form-control" cols="30" rows="10" name="descripcion" placeholder="Descripcion del articulo"></textarea>
+                    <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
                     <input type="text" class="form-control" name="precio" placeholder="Precio">
                     <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
                     <input name="condicion" class="form-control" placeholder="Condicion del Articulo">

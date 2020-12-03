@@ -12,7 +12,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $titulo = $_POST['titulo'];
-        $descripcion = limpiarDatos($_POST['descripcion']);
+        $descripcion = $_POST['descripcion'];   //limpiarDatos($_POST['descripcion']);
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
         $condicion = $_POST['condicion'];
@@ -24,11 +24,11 @@
 
         $statement = $conexion->prepare(
                                         'INSERT INTO posts (id, title, description, price, quantity,product_status, thumb) 
-                                        VALUES (null, :title,:description, :price,:quantity, :product_status, :thumb)'
+                                        VALUES (null, :title,:description, :price, :quantity, :product_status, :thumb)'
                                         );
         $statement->execute(array(
             'title' => $titulo,
-            'name' => $descripcion,
+            'description' => $descripcion,
             'price' => (int) $precio,
             'quantity' => (int) $cantidad,
             'product_status' => $condicion,

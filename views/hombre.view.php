@@ -53,21 +53,24 @@
 
       <section class="lista">
 
-        <div class="products_item" category-all="camisas">
+         <?php foreach ($resultados as $post) : ?>
+        <div class="products_item" category-all="pantalones">
 
           <div class="izquierda">
-            <img src="<?php ROUTE ?>imagen2/camisa.jpg" alt="" />
+            <img src="<?php ROUTE ?>imagen2/<?php echo $post['thumb'] ?>" alt="" />
           </div>
 
           <div class="derecha">
-            <span>titulo</span><br>
-            <span>usuario</span><br>
-            <span>precio</span><br>
+
+            <span><?php echo $post['title'] ?></span><br>
+            <span><?php echo $post['description'] ?></span><br>
+            <span><?php echo '$'.$post['price'] ?></span><br>
             <input type="submit" class="formulario-submit" value="Contacto">
 
           </div>
 
         </div>
+        <?php endforeach; ?>
 
       </section>
     </div>

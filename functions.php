@@ -10,7 +10,11 @@ function conexion() {
         return false;
     }
 }
-    
+
+function query(){
+
+    $conexion = conexion();
+}
 function comprobarSesion() {
 
     if (!isset($_SESSION['usuario'])) {
