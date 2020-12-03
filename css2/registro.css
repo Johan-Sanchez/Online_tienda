@@ -26,6 +26,7 @@ body {
   margin-top: 0;
   /* color: rgba(0, 0, 0, .7);*/
 }
+
 .formulario-label,
 .form-control,
 .formulario-submit {
@@ -35,13 +36,21 @@ body {
   font-weight: bold;
 }
 
+
 .form-control {
   padding: 20px;
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.7);
   margin-bottom: 40px;
 }
-
+.form-control-file{
+  padding: 25px 5px;
+  /*background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.7);*/
+  margin-bottom: 40px;
+  border: none;
+  background-color: transparent;
+}
 .formulario-label {
   padding-left: 15px;
 
