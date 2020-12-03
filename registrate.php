@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($errores == ''){
 
-           $statement = $conexion->prepare('INSERT INTO user ( id, order_id, user_type, name, last_name, email, genre, nick_name, password) 
+           $statement = $conexion->prepare('INSERT INTO user ( id, post_id, user_type, name, last_name, email, genre, nick_name, password) 
                                             VALUES (null, null, null, :name, :last_name,  :email,:genre, :nick_name, :password)');
 
            $statement->execute(array(
