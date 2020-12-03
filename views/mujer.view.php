@@ -13,6 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
   <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css" />
   <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
@@ -31,7 +32,7 @@
 
       </div>
       <div class="top-right-header">
-        <a href="<?php ROUTE ?>cerrar.php">Cerrar Sesion</a>
+      <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt" ></i>Cerrar Sesion</a>
       </div>
     </nav>
     <div class="contenedor-head">

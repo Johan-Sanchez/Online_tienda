@@ -61,14 +61,14 @@ header {
   display: flex;
   justify-content: space-around;
   background-image: linear-gradient(rgba(30, 34, 33, 9), rgba(30, 34, 33, 9));
-  background-size: 100% 20%;
+  background-size: 100% 17%;
   background-position: 100% 0%;
   background-repeat: no-repeat;
 }
 
 .top-left-header {
   display: flex;
-  width: 50%;
+  width: 40%;
   justify-content: space-between;
 }
 
@@ -88,18 +88,20 @@ header {
 
 .menu-navegacion a {
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   border: 1px solid white;
-  height: 13%;
-  padding: 5px 8px;
+  border-radius: 5%;
+  height: 10%;
+  padding: 4px 8px;
 }
 
 .menu-navegacion a:hover{
-  background-color: #ffff;
-  color: black;
+  background-color: transparent;
+  color:#ffff;
   border: 1px solid black;
+  border-radius: 5%;
 }
 
 .contenedor-head {

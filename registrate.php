@@ -1,12 +1,12 @@
 <?php 
-session_start();
+    session_start();
 
-require 'admin/config.php';
+    require 'admin/config.php';
 
-if (isset($_SESSION['usuario'])){
-    header('Location: index.php');
-    die();
-}
+    if (isset($_SESSION['usuario'])){
+        header('Location: index.php');
+        die();
+    }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
    
