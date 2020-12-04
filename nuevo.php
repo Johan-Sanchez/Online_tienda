@@ -13,7 +13,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	      $email = $_SESSION['usuario'];	
         $titulo = $_POST['titulo'];
-        $descripcion = limpiarDatos($_POST['descripcion']);
+        $descripcion = $_POST['descripcion'];   //limpiarDatos($_POST['descripcion']);
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
         $condicion = $_POST['condicion'];

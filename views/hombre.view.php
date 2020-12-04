@@ -51,6 +51,7 @@
         <a href="#store-mujer" class="category-items" category-all="zapatos">zapatos</a>
       </div>
       <section class="lista">
+<<<<<<< HEAD
         <div class="products_item" category-all="camisas">
           <img src="<?php ROUTE ?>imagen2/camisa.jpg" alt="" />
           <a href="#">Camisas casual</a>
@@ -87,6 +88,28 @@
           <img src="<?php ROUTE ?>imagen2\zapatosh2.jpg" alt="" />
           <a href="#">Zapatos azules</a>
         </div>
+=======
+
+         <?php foreach ($resultados as $post) : ?>
+        <div class="products_item" category-all="pantalones">
+
+          <div class="izquierda">
+            <img src="<?php ROUTE ?>imagen2/<?php echo $post['thumb'] ?>" alt="" />
+          </div>
+
+          <div class="derecha">
+
+            <span><?php echo $post['title'] ?></span><br>
+            <span><?php echo $post['description'] ?></span><br>
+            <span><?php echo '$'.$post['price'] ?></span><br>
+            <input type="submit" class="formulario-submit" value="Contacto">
+
+          </div>
+
+        </div>
+        <?php endforeach; ?>
+
+>>>>>>> 2c68f5257eee1db119fb3eed0d425866fab3ffd9
       </section>
     </div>
   </div>
