@@ -44,7 +44,7 @@
 
     <div class="store-mujer">
       <div class="category">
-        <a href="#store-mujer" class="category-items" category-all="all">all</a>
+        <a href="#store-mujer" class="category-items" category-all="all">All</a>
         <a href="#store-mujer" class="category-items" category-all="camisas">Camisas</a>
         <a href="#store-mujer" class="category-items" category-all="pantalones">Pantalones</a>
         <a href="#store-mujer" class="category-items" category-all="chaquetas">Chaquetas</a>

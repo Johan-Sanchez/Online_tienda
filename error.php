@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require 'admin/config.php'; ?>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>seccion hombre</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page</title>
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
-    <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
-    <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css">
+    <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css">
+    <link rel="stylesheet" href="<?php ROUTE ?>css2/error.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -39,50 +38,22 @@
         </div>
     </header>
 
-    <div class="post_admin">
-        <h1>Posts</h1>
 
+    <main class="error">
 
-        <section class="post_admin">
+        <div>
+            <h1>404</h1>
+            <h2>UH OH! You're lost.</h2>
+            <p>The page you are looking for does not exist.
+                How you got here is a mystery. But you can click the button below
+                to go back to the homepage.
+            </p>
+            <a href="<?php ROUTE ?>index.php" class="btn">HOME</a>
+        </div>
+        
+    </main>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-
-                <table border="1">
-                    <tr>
-                        <td><strong>ID</strong></td>
-                        <td><strong>Title</strong></td>
-                        <td><strong>Description</strong></td>
-                        <td><strong>Price</strong></td>
-                        <td><strong>Editar</strong></td>
-                        <td><strong>Eliminar</strong></td>
-
-                    </tr>
-                    <?php foreach ($resultados as $post) : ?>
-
-                        <tr>
-                            <td><span><?php echo $post['id'] ?></span><br></td>
-                            <td><span><?php echo $post['title'] ?></span><br></td>
-                            <td><span><?php echo $post['description'] ?></span><br></td>
-                            <td><span><?php echo '$' . $post['price'] ?></span><br></td>
-                            <td>
-
-                                <input type="submit" name="editar" value="Editar">
-
-                            </td>
-                            <td><input type="submit" name="eliminar" value="<?php echo $post['id'] ?>"></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-            </form>
-
-
-
-
-
-
-        </section>
-    </div>
-    </div>
+    <!--Footer-->
     <footer id="contacto">
         <div class="contenedor footer-content">
             <div class="contact-us">
@@ -91,24 +62,26 @@
             </div>
             <div class="social-media">
                 <a href="https://www.facebook.com/" class="social-media-icon">
-                    <i class="bx bxl-facebook-circle"></i>
+                    <i class='bx bxl-facebook-circle'></i>
                 </a>
                 <a href="https://www.whatsapp.com/?lang=es" class="social-media-icon">
-                    <i class="bx bxl-whatsapp"></i>
+                    <i class='bx bxl-whatsapp'></i>
                 </a>
                 <a href="https://www.youtube.com/" class="social-media-icon">
-                    <i class="bx bxl-youtube"></i>
+                    <i class='bx bxl-youtube'></i>
                 </a>
                 <a href="https://www.instagram.com/" class="social-media-icon">
-                    <i class="bx bxl-instagram"></i>
+                    <i class='bx bxl-instagram'></i>
                 </a>
                 <a href="https://www.google.com/intl/es-419/gmail/about/" class="social-media-icon">
-                    <i class="bx bx-mail-send"></i>
+                    <i class='bx bx-mail-send'></i>
                 </a>
             </div>
         </div>
         <div class="line"></div>
     </footer>
+    <script src="<?php ROUTE ?>js\menu.js"></script>
+
 </body>
 
 </html>

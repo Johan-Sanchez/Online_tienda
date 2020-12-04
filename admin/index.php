@@ -1,7 +1,6 @@
 <?php
   session_start();
   
-  require "../views/admin.view.php";
   require "../functions.php";
   require "config.php";
 
@@ -16,6 +15,9 @@
   
   if(!isset($_SESSION['admin'])){
       header('Location: admin.login.php');
+  }else{
+    header('Location: admin.php');
   }
+
   require '../views/admin.view.php';
 ?>

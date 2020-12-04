@@ -2,6 +2,7 @@
 
     require "../functions.php";
     require "config.php";
+
     // Comprobamos si ya tiene una sesion
     # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 
@@ -41,7 +42,7 @@
         }
     }
 
-    require '../views/admin.loginview.php';
+    require '../views/admin.login.view.php';
 
 ?>
 

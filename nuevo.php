@@ -42,7 +42,7 @@
         $statement->execute();
         $post_id = $statement->fetch(PDO::FETCH_COLUMN);
 
-        // Consulta para capturar la variable de $post_id
+        // Consulta para capturar la variable de $user_id
         $statement = $conexion->prepare('SELECT id FROM user WHERE email = :email');
         $statement->execute(array(
             ':email' => $email
