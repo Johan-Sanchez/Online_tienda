@@ -1,5 +1,1 @@
-<?php  
-    define('ROUTE', getenv("ROUTE")); 
-    
-
-?>
+<?php  define('ROUTE', getenv("ROUTE")); ?>

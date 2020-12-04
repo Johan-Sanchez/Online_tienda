@@ -19,55 +19,60 @@
 </head>
 
 <body>
-  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="formulario">
 
-    <h2 class="subtitulo">Registro</h2>
+  <!-- Formulario Registrate-->
+  <div class="formulario">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST">
 
-    <label for="" class="formulario-label">Nombre:</label>
-    <input type="text" name="nombre" class="form-control" id="nombre" required />
-    <label for="" class="formulario-label">Apellido:</label>
-    <input type="text" name="apellido" class="form-control" id="nombre" required />
+      <h2 class="subtitulo">Registro</h2>
 
-    <label for="" class="formulario-label">Sexo:</label>
-    <input type="radio" id="male" name="genero" value="m">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="genero" value="f">
-    <label for="female">Female</label><br>
-    <input type="radio" id="other" name="genero" value="o">
-    <label for="other">Other</label>
+      <label for="" class="formulario-label">Nombre:</label>
+      <input type="text" name="nombre" class="form-control" id="nombre" required />
+      <label for="" class="formulario-label">Apellido:</label>
+      <input type="text" name="apellido" class="form-control" id="nombre" required />
 
-    <label for="" class="formulario-label">Correo electronico:</label>
-    <input type="text" name="correo" class="form-control" required />
+      <label for="" class="formulario-label">Sexo:</label>
+      <input type="radio" id="male" name="genero" value="m">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="genero" value="f">
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="genero" value="o">
+      <label for="other">Other</label>
 
-    <label for="" class="formulario-label">Nombre de Usuario</label>
-    <input type="text" name="nick_name" class="form-control" required />
+      <label for="" class="formulario-label">Correo electronico:</label>
+      <input type="text" name="correo" class="form-control" required />
 
-    <label for="" class="formulario-label">Contraseña:</label>
-    <input type="password" name="password" class="form-control" required />
+      <label for="" class="formulario-label">Nombre de Usuario</label>
+      <input type="text" name="nick_name" class="form-control" required />
 
-    <label for="" class="formulario-label">Repite la contraseña:</label>
-    <input type="password" name="password2" class="form-control" required />
+      <label for="" class="formulario-label">Contraseña:</label>
+      <input type="password" name="password" class="form-control" required />
 
-    <input type="submit" value="Enviar" class="formulario-submit" />
+      <label for="" class="formulario-label">Repite la contraseña:</label>
+      <input type="password" name="password2" class="form-control" required />
 
-    <!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
-    <?php if (!empty($errores)) : ?>
-      <div class="error">
+      <input type="submit" value="Enviar" class="formulario-submit" />
 
-        <ul>
-          <li><?php echo $errores; ?></li>
-        </ul>
+      <!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
+      <?php if (!empty($errores)) : ?>
+        <div>
+          <ul>
+            <li><?php echo $errores; ?></li>
+          </ul>
+        </div>
+      <?php endif; ?>
+
+      <div id="aviso-legal">
+        <p>
+          Al crear una cuenta, aceptas las <a href="#">Condiciones de Uso</a> y
+          el <a href="#">Aviso de Privacidad</a>
+        </p>
       </div>
-    <?php endif; ?>
+    </form>
 
-    <div id="aviso-legal">
-      <p>
-        Al crear una cuenta, aceptas las <a href="#">Condiciones de Uso</a> y
-        el <a href="#">Aviso de Privacidad</a>
-      </p>
-      <p>¿Ya tienes una cuenta? <a href="<?php ROUTE ?>login.html">Iniciar sesión</a></p>
-    </div>
-  </form>
+    <p><strong>Ya tienes cuenta</strong></p>
+    <a href="<?php ROUTE ?>login.php"><input type="submit" class="formulario-submit" value="Iniciar sesion" /></a>
+  </div>
 
   <!-- Footer -->
   <footer id="contacto">
