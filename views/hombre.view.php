@@ -51,44 +51,6 @@
         <a href="#store-mujer" class="category-items" category-all="zapatos">zapatos</a>
       </div>
       <section class="lista">
-<<<<<<< HEAD
-        <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2/camisa.jpg" alt="" />
-          <a href="#">Camisas casual</a>
-        </div>
-        <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2\camisac.jpg" alt="" />
-          <a href="#">Camisas manga corta </a>
-        </div>
-        <div class="products_item" category-all="camisas">
-          <img src="<?php ROUTE ?>imagen2\camisaco.jpg" alt="" />
-          <a href="#">Camisas manga corta</a>
-        </div>
-        <div class="products_item" category-all="pantalones">
-          <img src="<?php ROUTE ?>imagen2\pantalon.jpg" alt="" />
-          <a href="#">Pantalones casual</a>
-        </div>
-        <div class="products_item" category-all="pantalones">
-          <img src="<?php ROUTE ?>imagen2\pantalon2.jpg" alt="" />
-          <a href="#">Pantalones jeans</a>
-        </div>
-        <div class="products_item" category-all="chaquetas">
-          <img src="<?php ROUTE ?>imagen2\chaqueta.jpg" alt="" />
-          <a href="#">Chaquetas azul</a>
-        </div>
-        <div class="products_item" category-all="chaquetas">
-          <img src="<?php ROUTE ?>imagen2\chaqueta2.jpg" alt="" />
-          <a href="#">Chaquetas levi´s</a>
-        </div>
-        <div class="products_item" category-all="zapatos">
-          <img src="<?php ROUTE ?>imagen2\zapatosh.jpg" alt="" />
-          <a href="#">Zapatos cafes</a>
-        </div>
-        <div class="products_item" category-all="zapatos">
-          <img src="<?php ROUTE ?>imagen2\zapatosh2.jpg" alt="" />
-          <a href="#">Zapatos azules</a>
-        </div>
-=======
 
          <?php foreach ($resultados as $post) : ?>
         <div class="products_item" category-all="pantalones">
@@ -109,7 +71,6 @@
         </div>
         <?php endforeach; ?>
 
->>>>>>> 2c68f5257eee1db119fb3eed0d425866fab3ffd9
       </section>
     </div>
   </div>
