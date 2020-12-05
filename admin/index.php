@@ -19,5 +19,5 @@
     header('Location: admin.php');
   }
 
-  require '../views/admin.view.php';
-?>
+ 
+?> 

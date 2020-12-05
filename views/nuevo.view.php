@@ -22,8 +22,8 @@
     <header class="header" id="inicio">
         <nav class="menu-navegacion">
             <div class="top-left-header">
-                <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-                <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
+                <a href="<?php ROUTE ?>mujer.php">Mujer</a>
+                <a href="<?php ROUTE ?>hombre.php">Hombre</a>
                 <a href="<?php ROUTE ?>promocion.php">Promociones</a>
                 <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
 
@@ -46,6 +46,7 @@
                     <input type="text" class="form-control" name="titulo" placeholder="Titulo de la publicacion">
                     <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
                     <input type="text" class="form-control" name="precio" placeholder="Precio">
+                    <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
                     <input name="condicion" class="form-control" placeholder="Condicion del Articulo">
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">

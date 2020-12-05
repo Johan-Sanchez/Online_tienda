@@ -23,14 +23,14 @@
   <header class="header" id="inicio">
     <nav class="menu-navegacion">
       <div class="top-left-header">
-        <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-        <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
+        <a href="<?php ROUTE ?>mujer.php">Mujer</a>
+        <a href="<?php ROUTE ?>hombre.php">Hombre</a>
         <a href="<?php ROUTE ?>promocion.php">Promociones</a>
         <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
 
       </div>
       <div class="top-right-header">
-      <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt" ></i>Cerrar Sesion</a>
+        <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
       </div>
     </nav>
     <div class="contenedor-head">
@@ -52,23 +52,23 @@
       </div>
       <section class="lista">
 
-         <?php foreach ($resultados as $post) : ?>
-        <div class="products_item" category-all="pantalones">
+        <?php foreach ($resultados as $post) : ?>
+          <div class="products_item" category-all="pantalones">
 
-          <div class="izquierda">
-            <img src="<?php ROUTE ?>imagen2/<?php echo $post['thumb'] ?>" alt="" />
+            <div class="izquierda">
+              <img src="<?php ROUTE ?>imagen2/<?php echo $post['thumb'] ?>" alt="" />
+            </div>
+
+            <div class="derecha">
+
+              <span><?php echo $post['title'] ?></span><br>
+              <span><?php echo $post['description'] ?></span><br>
+              <span><?php echo '$' . $post['price'] ?></span><br>
+              <input type="submit" class="formulario-submit" value="Contacto">
+
+            </div>
+
           </div>
-
-          <div class="derecha">
-
-            <span><?php echo $post['title'] ?></span><br>
-            <span><?php echo $post['description'] ?></span><br>
-            <span><?php echo '$'.$post['price'] ?></span><br>
-            <input type="submit" class="formulario-submit" value="Contacto">
-
-          </div>
-
-        </div>
         <?php endforeach; ?>
 
       </section>

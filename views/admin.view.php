@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
+    <link rel="stylesheet" href="<?php ROUTE ?>../css2/mujer.css" />
     <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
     <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
 </head>
@@ -22,15 +22,9 @@
 <body>
     <header class="header" id="inicio">
         <nav class="menu-navegacion">
-            <div class="top-left-header">
-                <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-                <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
-                <a href="<?php ROUTE ?>promocion.php">Promociones</a>
-                <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
-
-            </div>
-            <div class="top-right-header">
-                <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+           
+            <div class="top-right-header" >
+                <a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
             </div>
         </nav>
         <div class="contenedor-head">
@@ -45,35 +39,31 @@
 
         <section class="post_admin">
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
-                <table border="1">
+
+            <table border="1">
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Title</strong></td>
+                    <td><strong>Description</strong></td>
+                    <td><strong>Price</strong></td>
+                    <td><strong>Editar</strong></td>
+                    <td><strong>Eliminar</strong></td>
+
+                </tr>
+                <?php foreach ($resultados as $post) : ?>
+
                     <tr>
-                        <td><strong>ID</strong></td>
-                        <td><strong>Title</strong></td>
-                        <td><strong>Description</strong></td>
-                        <td><strong>Price</strong></td>
-                        <td><strong>Editar</strong></td>
-                        <td><strong>Eliminar</strong></td>
-
+                        <td><span><?php echo $post['id'] ?></span><br></td>
+                        <td><span><?php echo $post['title'] ?></span><br></td>
+                        <td><span><?php echo $post['description'] ?></span><br></td>
+                        <td><span><?php echo '$' . $post['price'] ?></span><br></td>
+                        <td><input type="submit" name="editar" value="Editar"></td>
+                        <td><input type="submit" name="eliminar" value="Eliminar"></td>
                     </tr>
-                    <?php foreach ($resultados as $post) : ?>
+                <?php endforeach; ?>
+            </table>
 
-                        <tr>
-                            <td><span><?php echo $post['id'] ?></span><br></td>
-                            <td><span><?php echo $post['title'] ?></span><br></td>
-                            <td><span><?php echo $post['description'] ?></span><br></td>
-                            <td><span><?php echo '$' . $post['price'] ?></span><br></td>
-                            <td>
-
-                                <input type="submit" name="editar" value="Editar">
-
-                            </td>
-                            <td><input type="submit" name="eliminar" value="<?php echo $post['id'] ?>"></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-            </form>
 
 
 
