@@ -78,6 +78,19 @@ body {
   border-radius: 10px;
 }
 
+.dropdown-menu a{
+  color: black;
+  background-color: transparent;
+}
+.dropdown-menu a:hover{
+  color:black;
+  background-color: transparent;
+}
+
+
+
+
+
 /* PRODUCTOS ============*/
 
 .lista {
