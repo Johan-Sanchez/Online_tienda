@@ -23,7 +23,7 @@
         <nav class="menu-navegacion">
             <div class="top-left-header">
                 <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-                <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
+                <a href="<?php ROUTE ?>views/post.view.php">Hombre</a>
                 <a href="<?php ROUTE ?>promocion.php">Promociones</a>
                 <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
 

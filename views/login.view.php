@@ -14,8 +14,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css" />
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css">
+  <link rel="stylesheet" href="../css2/registro.css" />
+  <link rel="stylesheet" href="../css2/estilos.css">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
@@ -63,7 +63,7 @@
     </form>
 
     <p><strong>¿Eres nuevo?</strong></p>
-    <a href="<?php ROUTE ?>registrate.php"><input type="submit" class="formulario-submit" value="Crear una cuenta" /></a>
+    <a href="../controllers/register_controller.php"><input type="submit" class="formulario-submit" value="Crear una cuenta" /></a>
 
   </div>
 

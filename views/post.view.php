@@ -11,9 +11,9 @@
   <!-- JS, Popper.js, and jQuery -->
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
-  <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
-  <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css2/mujer.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+
 </head>
 
 <body>

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
   <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
+  <link rel="stylesheet" href="../css2/mujer.css" />
 </head>
 
 <body>

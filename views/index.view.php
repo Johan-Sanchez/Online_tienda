@@ -22,8 +22,8 @@
     <nav class="menu-navegacion">
       <div class="top-left-header">
         <a href="<?php ROUTE ?>mujer.php">Mujer</a>
-        <a href="<?php ROUTE ?>hombre.php">Hombre</a>
-        <a href="<?php ROUTE ?>fundaciones.php">Fundaciones</a>
+        <a href="<?php ROUTE ?>controllers/post_controller.php">Hombre</a>
+        <a href="<?php ROUTE ?>controllers/partners_controller.php">Fundaciones</a>
         <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
       </div>
       <div class="top-right-header">
