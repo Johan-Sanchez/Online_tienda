@@ -6,7 +6,7 @@
     # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 
     if (isset($_SESSION['usuario'])) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         die();
     }
     // Comprobamos si ya han sido enviado los datos

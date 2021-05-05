@@ -59,7 +59,12 @@
               <span><?php echo $post['title'] ?></span><br>
               <span><?php echo $post['description'] ?></span><br>
               <span><?php echo '$' . $post['price'] ?></span><br>
-              <input type="submit" class="formulario-submit" value="Contacto" >
+
+              <form action="../controllers/product_detail_controller.php" id="form1" method="POST">
+                <input type="hidden" value=<?php echo $post['id']  ?> name="id" >
+                <input type="submit" class="formulario-submit" name="" value="Contacto" >
+              </form>
+
 
             </div>
 

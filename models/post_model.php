@@ -18,6 +18,23 @@ class PostModel{
         return $resultados;
     }
 
+    public function get_post_by_user($id){
+        
+        $statement = $this -> conexion->prepare(
+            "SELECT a.*, c.email AS user_email FROM posts a JOIN post_by_user b ON a.id = b.post_id 
+                JOIN user c ON c.id = b.user_id WHERE a.id = $id "
+        );
+
+        $statement->execute();
+
+        $resultado = $statement->fetchObject();
+
+        return $resultado;
+
+    }
+
+    
+
 }
 
 ?>
