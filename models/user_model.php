@@ -41,7 +41,7 @@ class UserModel{
                                 ':email'=>$email,
                                 ':genre' => $gender,
                                 ':nick_name' => $nick_name,
-																':phone' => $phone,
+								':phone' => $phone,
                                 ':password'=> $password)
         ); 
 

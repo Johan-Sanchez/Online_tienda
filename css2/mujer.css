@@ -97,7 +97,8 @@ body {
   width: 82%;
   display: flex;
   flex-wrap: wrap;
-  padding-right: 2rem;
+ 
+  justify-content: center;
 }
 
 .lista .products_item {
@@ -105,12 +106,21 @@ body {
   margin-left: 3%;
   margin-bottom: 25px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
-
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: flex-start;
+  transition: all 0.4s;
+}
 
+.lista .products_item_detail {
+  width: 80%;
+  margin-left: 3%;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   transition: all 0.4s;
 }
 

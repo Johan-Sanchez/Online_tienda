@@ -13,8 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css">
-    <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css">
+    <link rel="stylesheet" href="<?php ROUTE ?>../css2/estilos.css">
+    <link rel="stylesheet" href="<?php ROUTE ?>../css2/registro.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -22,18 +22,21 @@
     <header class="header" id="inicio">
         <nav class="menu-navegacion">
             <div class="top-left-header">
-                <a href="<?php ROUTE ?>mujer.php">Mujer</a>
-                <a href="<?php ROUTE ?>hombre.php">Hombre</a>
-                <a href="<?php ROUTE ?>fundaciones.php">Fundaciones</a>
-                <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
+            <a href="../controllers/post_controller.php">Catálogo</a>
+            <a href="../controllers/partners_controller.php">Fundaciones</a>
+            <a href="../controllers/new_post_controller.php">Publicar Producto</a>
 
             </div>
             <div class="top-right-header">
-                <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+            <?php 
+                if (isset($_SESSION['usuario'])){
+                echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+                }        
+            ?>
             </div>
         </nav>
         <div class="contenedor-head">
-            <h1 class="titulo"><a href="<?php ROUTE ?>index.php">OldNewLooK</a></h1>
+            <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
             <p class="copy">Te ves bien salvando el planeta</p>
         </div>
     </header>
@@ -51,6 +54,17 @@
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>
+                <?php 
+                
+                if (isset($result)){
+                    if ($result == true){   
+                        echo "<script>alert('Tú publicación ha sido creada exitosamente');
+                               window.location.href='user_controller.php';
+                            </script>";
+                    }
+                }
+                    
+                ?>
             </article>
         </div>
     </div>

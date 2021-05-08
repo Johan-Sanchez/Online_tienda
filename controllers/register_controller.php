@@ -15,9 +15,10 @@
         $gender= $_POST['genero'];
         $email= $_POST['correo'];
         $nick_name = filter_var(strtolower($_POST['nick_name']),FILTER_SANITIZE_STRING);
-				$phone = $_POST['phone'];
+		$phone = $_POST['phone'];
         $password = $_POST['password'];
         $password_2 = $_POST['password2'];
+        
 
         $errores = '';
 

@@ -20,8 +20,8 @@
   <header class="header" id="inicio">
     <nav class="menu-navegacion">
       <div class="top-left-header">
-        <a href="<?php ROUTE ?>mujer.php">Mujer</a>
-        <a href="<?php ROUTE ?>hombre.php">Hombre</a>
+        <a href="../controllers/post_controller.php">Catálogo</a>
+        <a href="../controllers/partners_controller.php">Fundaciones</a>
         <div class="dropdown show ">
           <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hi
@@ -33,19 +33,23 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
+        <a href="../controllers/new_post_controller.php">Publicar Producto</a>
 
       </div>
       <div class="top-right-header">
-        <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+        <?php 
+            if (isset($_SESSION['usuario'])){
+            echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+            }        
+        ?>
       </div>
     </nav>
     <div class="contenedor-head">
-      <h1 class="titulo"><a href="<?php ROUTE ?>index.php">OldNewLooK</a></h1>
+      <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
       <p class="copy">Te ves bien salvando el planeta</p>
     </div>
   </header>
-  <a name="mujer"></a>
+  
   <div class="wrap">
     <h1>Fundaciones</h1>
 
