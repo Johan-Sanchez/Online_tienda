@@ -29,10 +29,10 @@ class UserModel{
     
     }
 
-    public function create_user($name, $last_name, $email, $gender, $nick_name, $password){
+    public function create_user($name, $last_name, $email, $gender, $nick_name, $phone, $password){
         $statement = $this->conexion->prepare(
-            'INSERT INTO user ( id, user_type, name, last_name, email, genre, nick_name, password) 
-             VALUES (null, null, :name, :last_name,  :email,:genre, :nick_name, :password)'
+            'INSERT INTO user ( id, user_type, name, last_name, email, genre, nick_name, phone, password) 
+             VALUES (null, null, :name, :last_name,  :email,:genre, :nick_name, :phone, :password)'
         );
 
         $statement->execute(array(
@@ -41,6 +41,7 @@ class UserModel{
                                 ':email'=>$email,
                                 ':genre' => $gender,
                                 ':nick_name' => $nick_name,
+																':phone' => $phone,
                                 ':password'=> $password)
         ); 
 

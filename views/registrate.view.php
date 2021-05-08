@@ -45,6 +45,9 @@
       <label for="" class="formulario-label">Nombre de Usuario</label>
       <input type="text" name="nick_name" class="form-control" required />
 
+      <label for="" class="formulario-label">Numero de Celular</label>
+      <input type="text" name="phone" class="form-control" required />
+
       <label for="" class="formulario-label">Contraseña:</label>
       <input type="password" name="password" class="form-control" required />
 

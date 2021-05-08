@@ -3,7 +3,6 @@ require_once("../db/db.php");
 
 class PostModel{
     private $conexion;
-    private $posts;
  
     public function __construct(){
         $this->conexion = Conectar::conexion();
@@ -30,11 +29,7 @@ class PostModel{
         $resultado = $statement->fetchObject();
 
         return $resultado;
-
     }
 
-    
-
 }
-
 ?>
