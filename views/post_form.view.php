@@ -55,14 +55,18 @@
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>
                 <?php 
-                
-                if (isset($result)){
-                    if ($result == true){   
-                        echo "<script>alert('Tú publicación ha sido creada exitosamente');
-                               window.location.href='user_controller.php';
-                            </script>";
-                    }
-                }
+
+								if($file_upload_message) {
+									echo $file_upload_message;
+								}
+							
+								if (isset($result)){
+										if ($result == true){   
+												echo "<script>alert('Tú publicación ha sido creada exitosamente');
+															 window.location.href='user_controller.php';
+														</script>";
+										}
+								}
                     
                 ?>
             </article>

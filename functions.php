@@ -1,9 +1,10 @@
 <?php
 
-
+function getFileExtension($file_name) {
+ return substr(strrchr($file_name,'.'),1);
+}
 
 function comprobarSesion() {
-
     if (!isset($_SESSION['usuario'])) {
         header('Location: ' . ROUTE);
     }
