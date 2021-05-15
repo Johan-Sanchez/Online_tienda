@@ -28,8 +28,10 @@
       <div class="top-right-header">
         <?php 
           if (isset($_SESSION['usuario'])){
-           echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-          }        
+           echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>';
+          }else{
+            echo  '<a href="controllers/user_controller.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
+          }     
         ?>
         
       </div>

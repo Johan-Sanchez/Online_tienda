@@ -27,7 +27,7 @@
       <div class="top-right-header">
         <?php 
             if (isset($_SESSION['usuario'])){
-            echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+            echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
             }        
         ?>
       </div>
@@ -42,27 +42,36 @@
     <h1>Detalle Publicación</h1>
 
     <div>
-      
-      <section class="lista">
+    
+      <section class="lista_detail">
 
-        <div class="products_item_detail">
+        <div class="products_item_detail_left">
 
-            <div class="izquierda">
+            <div class="">
                     <img src="../img/<?php echo $resultado->thumb ?>" alt="" style="width: 300px; height: 300px;"  />
             </div>
-            
-            <div class="derecha">
-                <ul>
-                    <h1><?php echo $resultado->title?></h1>
-                    <li>Precio: $<?php echo $resultado->price?></li>
-                    <li>Descripción: <?php echo $resultado->description?></li>
-                    <li>cantidad: <?php echo $resultado->quantity?></li>
-                    <li>Contacto: <?php echo $resultado->user_email?></li>
-                    <li>Cel: <?php echo $resultado->phone?></li>
-                </ul> 
-            </div>
         </div>
-            
+
+        <div class="products_item_detail_right"> 
+          
+            <div class="inner_right">
+              <ul>
+                <li><h3><?php echo ucwords($resultado->title)?></h3></li>
+                <li><strong> $<?php echo $resultado->price?></strong></li>
+                <li><strong>Cantidad: </strong><?php echo $resultado->quantity?></li>
+                <li><strong>Descripción:</strong> <?php echo $resultado->description?></li>
+              </ul>
+            </div>
+            <div class="inner_right">
+              <h4>Información De Contacto</h4>
+              <ul>
+                <li><?php echo $resultado->name." ".$resultado->last_name ?></li>
+                <li><strong>Email: </strong><?php echo $resultado->user_email?></li>
+                <li><strong>Celular: </strong><?php echo $resultado->phone?></li>
+              </ul>
+            </div>
+    
+        </div>
       </section>
     </div>
   </div>

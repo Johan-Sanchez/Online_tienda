@@ -30,7 +30,7 @@
             <div class="top-right-header">
             <?php 
                 if (isset($_SESSION['usuario'])){
-                echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+                echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
                 }        
             ?>
             </div>

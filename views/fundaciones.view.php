@@ -22,24 +22,15 @@
       <div class="top-left-header">
         <a href="../controllers/post_controller.php">Catálogo</a>
         <a href="../controllers/partners_controller.php">Fundaciones</a>
-        <div class="dropdown show ">
-          <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Hi
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
         <a href="../controllers/new_post_controller.php">Publicar Producto</a>
 
       </div>
       <div class="top-right-header">
         <?php 
             if (isset($_SESSION['usuario'])){
-            echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+            echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+            }else{
+              echo  '<a href="../controllers/user_controller.php"><i class="fas fa-sign-in-alt"></i>Iniciar Sesion</a>';
             }        
         ?>
       </div>
@@ -50,38 +41,59 @@
     </div>
   </header>
   
-  <div class="wrap">
-    <h1>Fundaciones</h1>
+ 
 
-    <div class="store-mujer">
+  <div class="fundaciones-section fundaciones-include">
+      <h2>APOYA A FUNDACIONES</h2>
+      <h3>La comunidad OldNewLooK impulsa el apoyado a estas grandes causas y muchas más.</h3>
 
-      <section class="lista">
-
-        <?php foreach ($resultados as $post) : ?>
-          <div class="products_item" category-all="pantalones">
-
-            <div class="izquierda">
-              <img src="<?php echo $post['imagen'] ?>" alt="" style="width: 250px; height: 68px;" />
-            </div>
-
-            <div class="derecha">
-
-              <span><?php echo $post['nombre'] ?></span><br>
-              <a class="b" href="<?php echo $post['url'] ?>" target="_blank">Contacto la fundación</a>
-
-              <form action="" method="post">
-                <?php $_POST['id'] = $post['id'] ?>
-                <a href="<?php ROUTE ?>descripcion.php ">Descripción Post</a>
-              </form>
-
-            </div>
-
+    <div class="fundaciones-grid">
+      <a href="https://www.minutodedios.org/" target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="https://www.minutodedios.org/images/logo-cmd-ho-transparente.png" alt="Games Aid">
           </div>
-        <?php endforeach; ?>
-
-      </section>
+        </div>
+      </a>
+      <a href="https://www.fundacioncompasion.org/" target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="https://www.fundacioncompasion.org/wp-content/uploads/2016/05/cropped-logo.png" alt="Make A Wish">
+          </div>
+        </div>
+      </a>
+      <a href="http://www.fundacionlasgolondrinas.org/" target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="https://static.wixstatic.com/media/c7904e_6b3cb96ce8804ef5a6f85acac8d59564~mv2.png/v1/fill/w_232,h_160,al_c,q_85,usm_0.66_1.00_0.01/FLG.webp" alt="Red Cross">
+          </div>
+        </div>
+      </a> 
+      <a href="https://fundacionformemos.org/es" target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="https://fundacionformemos.org/images/logo.png" alt="Red Cross">
+          </div>
+        </div>
+      </a>
+      <a href="https://vivirenelpoblado.com/re-coleccion-recoleccion-de-ropa-usada-en-viva-envigado/"  target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="https://vivirenelpoblado.com/wp-content/uploads/2019/07/logo-vertica-250.png" style="background-color: grey;" alt="Red Cross">
+          </div>
+        </div>
+      </a>
+      <a href="http://www.casademariayelnino.org"  target="_blank" rel="nofollow">
+        <div class="fundaciones-item">
+          <div class="fundaciones-image-wrapper">
+            <img src="http://www.casademariayelnino.org/themes/ccmn/images/logoUp.png" alt="Red Cross">
+          </div>
+        </div>
+      </a>
     </div>
   </div>
+
+  
 
   <!--Footer -->
   <footer id="contacto">

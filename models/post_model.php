@@ -20,7 +20,7 @@ class PostModel{
     public function get_post_by_user($id){
         
         $statement = $this -> conexion->prepare(
-            "SELECT a.*, c.phone, c.email AS user_email FROM posts a JOIN post_by_user b ON a.id = b.post_id 
+            "SELECT a.*, c.phone, c.email AS user_email, c.name, c.last_name  FROM posts a JOIN post_by_user b ON a.id = b.post_id 
                 JOIN user c ON c.id = b.user_id WHERE a.id = $id "
         );
 

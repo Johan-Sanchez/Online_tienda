@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 a {
@@ -88,17 +89,19 @@ body {
 }
 
 
-
-
-
 /* PRODUCTOS ============*/
 
 .lista {
-  width: 82%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
- 
   justify-content: center;
+  
+}
+.lista_detail{
+  width: 100%;
+  display: flex;
+  height: 80vh;
 }
 
 .lista .products_item {
@@ -113,15 +116,39 @@ body {
   transition: all 0.4s;
 }
 
-.lista .products_item_detail {
-  width: 80%;
+.lista_detail .products_item_detail_left {
+  width: 60%;
+  height: 90%;
   margin-left: 3%;
-  margin-bottom: 25px;
+  margin-right: 1%;
+  margin-bottom: 10vh;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
   transition: all 0.4s;
+}
+.lista_detail .products_item_detail_right {
+  width: 37%;
+  height: 90%;
+  margin-right: 3%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.inner_right{
+  width: 100%;
+  height: 50%;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
+  text-align: left;
+  padding-top: 5vh;
+  padding-left: 4vh;
 }
 
 img {
@@ -149,6 +176,7 @@ img {
   width: 40%;
   text-align: center;
 }
+
 .derecha {
   width: 60%;
 }
@@ -236,4 +264,82 @@ img {
     width: 100%;
     margin-left: 0px;
   }
+}
+/* --------- */
+
+.fundaciones-include {
+  padding:55px 20px 65px 20px
+ }
+
+ .fundaciones-description .fundaciones-button {
+  margin:22px 0;
+  padding:3px 24px 5px;
+  font-size:14px;
+  border-radius:3px
+ }
+ .fundaciones-description p {
+  font-size:14px;
+  margin-bottom:0
+ }
+ .fundaciones-section {
+  text-align:center;
+  background:white
+ }
+ .fundaciones-section h2 {
+  max-width:500px;
+  font-size:30px;
+  margin:auto
+ }
+ .fundaciones-section h3 {
+  color:black;
+  font-weight:900;
+  font-size:15px;
+  line-height:2;
+  margin-top: 15px;
+ }
+ .fundaciones-section a {
+  text-decoration:none
+ }
+ .fundaciones-section .fundaciones-button {
+  margin-top:36px;
+  text-shadow:rgba(0,0,0,0.2) 0px 1px 2px;
+  margin-bottom:2px;
+  padding:10px 30px 13px;
+  border-radius:6px;
+  font-weight:900;
+  font-size:20px;
+  line-height:26px
+ }
+ 
+ .fundaciones-item {
+  width:200px;
+  padding:15px;
+  background-color:white;
+  height:100px;
+  margin:10px
+ }
+ .fundaciones-image-wrapper {
+  position:relative;
+  height:100%;
+  width:100%
+ }
+ .fundaciones-image-wrapper img {
+  max-height:100%;
+  max-width:100%;
+  width:auto;
+  height:auto;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto
+ }
+ .fundaciones-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  max-width:1100px;
+  padding:10px;
+  margin:auto
 }
