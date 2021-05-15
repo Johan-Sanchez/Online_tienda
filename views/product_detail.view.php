@@ -48,7 +48,7 @@
         <div class="products_item_detail_left">
 
             <div class="">
-                    <img src="../img/<?php echo $resultado->thumb ?>" alt="" style="width: 300px; height: 300px;"  />
+                    <img src="<?php echo $resultado->thumb ?>" alt="" style="width: 300px; height: 300px;"  />
             </div>
         </div>
 
