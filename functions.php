@@ -5,7 +5,6 @@ function getFileExtension($file_name) {
    }
 
 function comprobarSesion() {
-
     if (!isset($_SESSION['usuario'])) {
         header('Location: ' . ROUTE);
     }
