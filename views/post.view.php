@@ -55,7 +55,7 @@
           <div class="products_item" category-all="pantalones">
 
             <div class="izquierda">
-              <img src="../img/<?php echo $post['thumb'] ?>" alt="" />
+              <img src="<?php echo $post['thumb'] ?>" alt="" />
             </div>
 
             <div class="derecha">

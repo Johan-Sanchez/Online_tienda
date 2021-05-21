@@ -50,7 +50,7 @@
                     <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
                     <input type="text" class="form-control" name="precio" placeholder="Precio">
                     <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
-                    <input name="condicion" class="form-control" placeholder="Condicion del Articulo">
+                    <input type="text" name="condicion" class="form-control" placeholder="Condicion del Articulo">
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>
