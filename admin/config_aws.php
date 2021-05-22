@@ -1,11 +1,13 @@
 <?php 
-require_once('../S3.php');			
+require '../vendor/autoload.php';
+
+$credentials = new Aws\Credentials\Credentials('AKIAXAVALMVZHM2GJHR5', 'ynxm+Op4kMPVmAKkvDWAeZ4QDdEVy9erkQBs0y66');
+
+$s3 = new Aws\S3\S3Client([
+    'version'     => 'latest',
+    'region'      => 'us-east-1',
+    'credentials' => $credentials
+]);	
 
 $bucket = 'tienda-online-bt';
-
-$awsAccessKey = 'AKIAXAVALMVZAOQW5SOS';
-$awsSecretKey = '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';
-
-$s3 = new S3($awsAccessKey, $awsSecretKey);
-$s3->putBucket($bucket, S3::ACL_PUBLIC_READ);
 ?>

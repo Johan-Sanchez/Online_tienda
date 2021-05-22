@@ -28,7 +28,7 @@
 
             </div>
             <div class="top-right-header">
-            <?php 
+            <?php          
                 if (isset($_SESSION['usuario'])){
                 echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
                 }        
@@ -55,6 +55,10 @@
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>
                 <?php 
+
+                if($file_upload_message) {
+                    echo $file_upload_message;
+                }
                 
                 if (isset($result)){
                     if ($result == true){   

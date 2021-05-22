@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <header class="header" id="inicio">
     <nav class="menu-navegacion">
       <div class="top-left-header">
@@ -27,17 +28,17 @@
       <div class="top-right-header">
         <?php
         if (isset($_SESSION['usuario'])) {
-          echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+          echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion>';
         }
         ?>
       </div>
     </nav>
     <div class="contenedor-head">
-      <h1 class="titulo"><a href="<?php ROUTE ?>index.php">OldNewLooK</a></h1>
+      <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
       <p class="copy">Te ves bien salvando el planeta</p>
     </div>
   </header>
-
+  
   <div class="wrap">
     <h1>Detalle Publicación</h1>
 
@@ -48,7 +49,7 @@
         <div class="products_item_detail_left">
 
           <div class="">
-            <img src="<?php echo $resultado->thumb ?>" alt="" style="width: 300px; height: 300px;" />
+            <img src="<?php echo $resultado->thumb ?>" alt="" style="width: 300px; height: 300px;"/>
           </div>
         </div>
 
@@ -104,9 +105,9 @@
     <div class="line"></div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

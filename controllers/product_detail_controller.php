@@ -12,13 +12,8 @@ if (!isset($_SESSION['usuario'])) {
     
         $post = new PostModel();
         $resultado = $post->get_post_by_user($product_id);
-    
-        
-    
+        // echo var_dump($resultado);
         require '../views/product_detail.view.php';
-    
     }
-
 }
-
 ?>
