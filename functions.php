@@ -1,22 +1,15 @@
 <?php
 
-function conexion() {
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=tienda_online', 'root', '');
-        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $conexion;    
-
-    } catch (PDOException $e) { 
-        return false;
-    }
+function getFileExtension($file_name) {
+<<<<<<< HEAD
+    return substr(strrchr($file_name,'.'),1);
+   }
+=======
+ return substr(strrchr($file_name,'.'),1);
 }
+>>>>>>> d3e62a5438e8402f51b5527a34016b0f9daea30e
 
-function query(){
-
-    $conexion = conexion();
-}
 function comprobarSesion() {
-
     if (!isset($_SESSION['usuario'])) {
         header('Location: ' . ROUTE);
     }

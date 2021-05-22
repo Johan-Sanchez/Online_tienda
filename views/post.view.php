@@ -9,32 +9,31 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
   <!-- JS, Popper.js, and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
-  <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
-  <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css2/mujer.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+
 </head>
 
 <body>
   <header class="header" id="inicio">
     <nav class="menu-navegacion">
       <div class="top-left-header">
-        <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-        <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
-        <a href="<?php ROUTE ?>promocion.php">Promociones</a>
-        <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
-
+        <a href="../controllers/post_controller.php">Catálogo</a>
+        <a href="../controllers/partners_controller.php">Fundaciones</a>
+        <a href="../controllers/new_post_controller.php">Publicar Producto</a>
       </div>
       <div class="top-right-header">
-      <a href="<?php ROUTE ?>cerrar.php"><i class="fas fa-sign-out-alt" ></i>Cerrar Sesion</a>
+        <?php 
+            if (isset($_SESSION['usuario'])){
+            echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+            }        
+        ?>
       </div>
     </nav>
     <div class="contenedor-head">
-      <h1 class="titulo"><a href="<?php ROUTE ?>index.php">OldNewLooK</a></h1>
+      <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
       <p class="copy">Te ves bien salvando el planeta</p>
     </div>
   </header>
@@ -44,7 +43,7 @@
 
     <div class="store-mujer">
       <div class="category">
-        <a href="#store-mujer" class="category-items" category-all="all">all</a>
+        <a href="#store-mujer" class="category-items" category-all="all">All</a>
         <a href="#store-mujer" class="category-items" category-all="camisas">Camisas</a>
         <a href="#store-mujer" class="category-items" category-all="pantalones">Pantalones</a>
         <a href="#store-mujer" class="category-items" category-all="chaquetas">Chaquetas</a>
@@ -52,23 +51,27 @@
       </div>
       <section class="lista">
 
-         <?php foreach ($resultados as $post) : ?>
-        <div class="products_item" category-all="pantalones">
+        <?php foreach ($resultados as $post) : ?>
+          <div class="products_item" category-all="pantalones">
 
-          <div class="izquierda">
-            <img src="<?php ROUTE ?>imagen2/<?php echo $post['thumb'] ?>" alt="" />
+            <div class="izquierda">
+              <img src="<?php echo $post['thumb'] ?>" alt="" />
+            </div>
+
+            <div class="derecha">
+              <span><?php echo $post['title'] ?></span><br>
+              <span><?php echo $post['description'] ?></span><br>
+              <span><?php echo '$' . $post['price'] ?></span><br>
+
+              <form action="../controllers/product_detail_controller.php" id="form1" method="POST">
+                <input type="hidden" value=<?php echo $post['id']  ?> name="id" >
+                <input type="submit" class="formulario-submit" name="" value="Detalle" >
+              </form>
+
+
+            </div>
+
           </div>
-
-          <div class="derecha">
-
-            <span><?php echo $post['title'] ?></span><br>
-            <span><?php echo $post['description'] ?></span><br>
-            <span><?php echo '$'.$post['price'] ?></span><br>
-            <input type="submit" class="formulario-submit" value="Contacto">
-
-          </div>
-
-        </div>
         <?php endforeach; ?>
 
       </section>
@@ -100,6 +103,10 @@
     </div>
     <div class="line"></div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>

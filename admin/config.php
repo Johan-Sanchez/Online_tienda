@@ -1,8 +1,7 @@
 <?php  define('ROUTE', getenv("ROUTE")); 
+require '../vendor/autoload.php';
+require_once('../s3.php');			
 
-function authAdmin() {
-
-}
-
+$bucket = 'tienda-online-bt';
 
 ?>

@@ -13,8 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css" />
-  <link rel="stylesheet" href="<?php ROUTE ?>css2/mujer.css" />
+  <link rel="stylesheet" href="../css2/registro.css" />
+  <link rel="stylesheet" href="../css2/mujer.css" />
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
@@ -45,6 +45,9 @@
       <label for="" class="formulario-label">Nombre de Usuario</label>
       <input type="text" name="nick_name" class="form-control" required />
 
+      <label for="" class="formulario-label">Numero de Celular</label>
+      <input type="text" name="phone" class="form-control" required />
+
       <label for="" class="formulario-label">Contraseña:</label>
       <input type="password" name="password" class="form-control" required />
 
@@ -71,7 +74,7 @@
     </form>
 
     <p><strong>Ya tienes cuenta</strong></p>
-    <a href="<?php ROUTE ?>login.php"><input type="submit" class="formulario-submit" value="Iniciar sesion" /></a>
+    <a href="../controllers/user_controller.php"><input type="submit" class="formulario-submit" value="Iniciar sesion" /></a>
   </div>
 
   <!-- Footer -->

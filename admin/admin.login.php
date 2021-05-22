@@ -2,6 +2,7 @@
 
     require "../functions.php";
     require "config.php";
+
     // Comprobamos si ya tiene una sesion
     # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 
@@ -23,7 +24,6 @@
             /* $password = hash('sha512', $password); */
 
             $statement = $conexion->prepare('SELECT user_name , password FROM admin_user WHERE user_name= :user_name AND password = :password');
-
             $statement->execute(array(':user_name' => $user_name, ':password' => $password));
             $resultado = $statement->fetch();
 
@@ -41,7 +41,7 @@
         }
     }
 
-    require '../views/admin.loginview.php';
+    require '../views/admin.login.view.php';
 
 ?>
 

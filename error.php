@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require 'admin/config.php'; ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Producto</title>
+    <title>404 Page</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -15,6 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php ROUTE ?>css2/estilos.css">
     <link rel="stylesheet" href="<?php ROUTE ?>css2/registro.css">
+    <link rel="stylesheet" href="<?php ROUTE ?>css2/error.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -23,7 +23,7 @@
         <nav class="menu-navegacion">
             <div class="top-left-header">
                 <a href="<?php ROUTE ?>views/mujer.view.php">Mujer</a>
-                <a href="<?php ROUTE ?>views/hombre.view.php">Hombre</a>
+                <a href="<?php ROUTE ?>views/post.view.php">Hombre</a>
                 <a href="<?php ROUTE ?>promocion.php">Promociones</a>
                 <a href="<?php ROUTE ?>nuevo.php">Publicar Producto</a>
 
@@ -37,22 +37,23 @@
             <p class="copy">Te ves bien salvando el planeta</p>
         </div>
     </header>
-    <div class="container">
-        <div class="post">
-            <article>
-                <h2 class="titulo">Nuevo Articulo</h2>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data" class="formulario" method="post">
-                    <h2 class="subtitulo">Publicar Producto</h2>
-                    <input type="text" class="form-control" name="titulo" placeholder="Titulo de la publicacion">
-                    <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
-                    <input type="text" class="form-control" name="precio" placeholder="Precio">
-                    <input name="condicion" class="form-control" placeholder="Condicion del Articulo">
-                    <input type="file" class="form-control-file" name="thumb">
-                    <input type="submit" class="formulario-submit" value="Crear Articulo">
-                </form>
-            </article>
+
+
+    <main class="error">
+
+        <div>
+            <h1>404</h1>
+            <h2>UH OH! You're lost.</h2>
+            <p>The page you are looking for does not exist.
+                How you got here is a mystery. But you can click the button below
+                to go back to the homepage.
+            </p>
+            <a href="<?php ROUTE ?>index.php" class="btn">HOME</a>
         </div>
-    </div>
+        
+    </main>
+
+    <!--Footer-->
     <footer id="contacto">
         <div class="contenedor footer-content">
             <div class="contact-us">

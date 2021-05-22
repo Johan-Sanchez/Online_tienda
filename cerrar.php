@@ -4,7 +4,7 @@
 
     $_SESSION = array();
 
-    header('Location: login.php');
+    header('Location: controllers/user_controller.php');
     
     die();
 ?>

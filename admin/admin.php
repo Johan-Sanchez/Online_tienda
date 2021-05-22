@@ -1,6 +1,6 @@
-<?php 
-    require "admin/config.php";
-    require "functions.php";
+<?php session_start();
+    require "config.php";
+    require "../functions.php";
 
     $conexion = conexion();
 
@@ -9,14 +9,8 @@
     }
 
     $statement = $conexion->prepare("SELECT * FROM posts");
-
     $statement->execute();
-
     $resultados = $statement->fetchAll();
 
-
-    
-    require 'views/hombre.view.php'
-
+    require '../views/admin.view.php';
 ?>
-
