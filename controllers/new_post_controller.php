@@ -1,6 +1,7 @@
 <?php session_start();
     require '../functions.php';
     require_once '../models/post_model.php';
+    require_once '../models/user_model.php';
     require '../admin/config.php';
 
 if (!isset($_SESSION['usuario'])) {
@@ -8,6 +9,16 @@ if (!isset($_SESSION['usuario'])) {
     die();
 }
 
+$user= new UserModel();
+$email = $_SESSION['usuario'];
+$resultado = $user->validate_user($email);
+
+if($resultado['subscription_id'] === NULL){
+    header('Location: http://localhost:4242');
+    die();
+}
+
+ 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $file_upload_message = '';
     $title               = $_POST['titulo'];
@@ -39,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($file_size < (1024 * 1024)) {
                     include '../admin/config_aws.php';
                     $new_image_name = time().'.'.$file_extension;
-                    $response       = $s3->putObject(
+                    $response = $s3->putObject(
                         [
                             'Bucket'     => $bucket,
                             'Key'        => $new_image_name,

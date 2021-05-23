@@ -10,5 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $subModel = new UserModel();
     $resultados = $subModel->update_user($email, $subscription_id, $payment_status);
-    echo $resultados;
+
+    header('Location: new_post_controller.php');
 }
+
+

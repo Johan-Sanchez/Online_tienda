@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '362a952252937127dedfc9626ea38cc1405a57c8',
+    'reference' => '47c2a65254f8a5c77a519c7e70fb18759e40bf38',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '362a952252937127dedfc9626ea38cc1405a57c8',
+      'reference' => '47c2a65254f8a5c77a519c7e70fb18759e40bf38',
     ),
     'aws/aws-sdk-php' => 
     array (
@@ -1010,9 +1010,23 @@ return $installed[0]['root'];
 
 
 
+
 public static function getRawData()
 {
+@trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
+
 return self::$installed;
+}
+
+
+
+
+
+
+
+public static function getAllRawData()
+{
+return self::getInstalled();
 }
 
 

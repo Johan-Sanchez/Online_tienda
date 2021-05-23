@@ -8,12 +8,8 @@ const sessionId = urlParams.get("session_id")
           return result.json()
         })
         .then(function(session){
-          var sessionJSON = JSON.stringify(session, null, 2);
-          document.getElementById("msg").innerHTML = sessionJSON;
           document.getElementById("stripeSub").value = session.subscription;
           document.getElementById("payment-status").value = session.payment_status;
-
-
         })
         .catch(function(err){
           console.log('Error when fetching Checkout session', err);

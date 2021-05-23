@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores = '<li>Por favor llene los campos correctamente</li>';
     } else {
         $user      = new UserModel();
-        $resultado = $user->validate_user($nick_name);
+        $resultado = $user->validate_user($email);
 
         if ($resultado != false) {
-            $errores = '<li>El nombre de usuario ya exite</li>';
+            $errores = '<li>El usuario ya exite</li>';
         }
 
         $password   = hash('sha512', $password);
@@ -46,4 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }//end if
 
-        require '../views/registrate.view.php';
+require '../views/registrate.view.php';
