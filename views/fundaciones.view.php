@@ -27,8 +27,8 @@
       </div>
       <div class="top-right-header">
         <?php
-        if (isset($_SESSION['subscription_id']) && isset($_SESSION['subscription_status'])) {
-            echo '<a href="Location: http://localhost:4242">Subscribete</a>';
+        if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
+            echo '<a href="./payment/index.php">Subscribete</a>';
         }
 
         if (isset($_SESSION['usuario'])) {

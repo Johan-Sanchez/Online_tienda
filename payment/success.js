@@ -15,27 +15,4 @@ const sessionId = urlParams.get("session_id")
           console.log('Error when fetching Checkout session', err);
         });
 
-    // In production, this should check CSRF, and not pass the session ID.
-    // The customer ID for the portal should be pulled from the
-    // authenticated user on the server.
-    const manageBillingForm = document.querySelector('#manage-billing-form');
-    manageBillingForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      fetch('/customer-portal.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          sessionId: sessionId
-        }),
-      })
-          .then((response) => response.json())
-          .then((data) => {
-            window.location.href = data.url;
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-    });
   }

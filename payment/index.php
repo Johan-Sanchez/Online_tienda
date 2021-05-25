@@ -1,69 +1,82 @@
+<?php require_once('../admin/config.php') ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Stripe Checkout Sample</title>
-    <meta name="description" content="A demo of Stripe Payment Intents" />
+    <title>subscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/global.css" />
-    <!-- Load Stripe.js on your website. -->
+  <link rel="stylesheet" href="../css2/registro.css" />
+  <link rel="stylesheet" href="../css2/estilos.css">
+  <link rel="stylesheet" href="../css2/mujer.css">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="./script.js" defer></script>
   </head>
 
   <body>
-    <div class="sr-root">
-      <div class="sr-main" style="display: flex;">
-        <header class="sr-header">
-          <div class="sr-header__logo"></div>
-        </header>
-        <div class="sr-container">
-          <section class="container basic-photo">
-            <div>
-              <h1>Basic subscription</h1>
-              <h4>1 photo per week</h4>
-              <div class="pasha-image">
-                <img
-                  src="https://picsum.photos/280/320?random=4"
-                  width="140"
-                  height="160"
-                />
-              </div>
-            </div>
-            <button id="basic-plan-btn">$5.00 per week</button>
-          </section>
-          <section class="container pro-photo">
-            <div>
-              <h1>Pro subscription</h1>
-              <h4>3 photos per week</h4>
-              <div class="pasha-image-stack">
-                <img
-                  src="https://picsum.photos/280/320?random=1"
-                  width="105"
-                  height="120"
-                  alt="Sample Pasha image 1"
-                />
-                <img
-                  src="https://picsum.photos/280/320?random=2"
-                  width="105"
-                  height="120"
-                  alt="Sample Pasha image 2"
-                />
-                <img
-                  src="https://picsum.photos/280/320?random=3"
-                  width="105"
-                  height="120"
-                  alt="Sample Pasha image 3"
-                />
-              </div>
-            </div>
-            <button id="pro-plan-btn">$12.00 per week</button>
-          </section>
-        </div>
-        <div id="error-message"></div>
+  <header class="header" id="inicio">
+    <nav class="menu-navegacion">
+      <div class="top-left-header">
+        <a href="../controllers/post_controller.php">Catálogo</a>
+        <a href="../controllers/partners_controller.php">Fundaciones</a>
+        <a href="../controllers/new_post_controller.php">Publicar Producto</a>
+      </div>
+
+    </nav>
+    <div class="contenedor-head">
+      <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
+      <p class="copy">Te ves bien salvando el planeta</p>
+    </div>
+  </header>
+  <h1 class='title'>Planes & Precios</h1>
+  <div class="container-sub">
+
+    <section class="inner-container ">
+      <h2>Membresia Basica</h2>
+      <h4>$5.00 / mes</h4>
+      <p><strong>Tendras acceso a realizar publicaciones por el periodo de un mes</strong></p>
+      <button id="basic-plan-btn">Suscribirse</button>
+    </section>
+
+    <section class="inner-container ">
+        <h2>Membresia Pro</h2>
+        <h4>$25.00 / año</h4>
+        <p><strong>Tendras acceso a realizar publicaciones por el periodo de un año</strong></p>
+    
+      <button id="pro-plan-btn">Suscribirse</button>
+    </section>
+    
+    <div id="error-message"></div>
+  </div>
+
+      <footer id="contacto">
+    <div class="contenedor footer-content">
+      <div class="contact-us">
+        <h2 class="brand">NewOldLooK</h2>
+        <p>Comprometidos con el Planeta</p>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/" class="social-media-icon">
+          <i class="bx bxl-facebook-circle"></i>
+        </a>
+        <a href="https://www.whatsapp.com/?lang=es" class="social-media-icon">
+          <i class="bx bxl-whatsapp"></i>
+        </a>
+        <a href="https://www.youtube.com/" class="social-media-icon">
+          <i class="bx bxl-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/" class="social-media-icon">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="https://www.google.com/intl/es-419/gmail/about/" class="social-media-icon">
+          <i class="bx bx-mail-send"></i>
+        </a>
       </div>
     </div>
+    <div class="line"></div>
+  </footer>
+    
   </body>
 </html>

@@ -14,7 +14,7 @@ $email = $_SESSION['usuario'];
 $resultado = $user->validate_user($email);
 
 if($resultado['subscription_id'] === NULL){
-    header('Location: http://localhost:4242');
+    header('Location: ./payment/index.php');
     die();
 }
 
@@ -60,25 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                     if ($response) {
-                        $file_upload_message  = 'File Uploaded Successfully to amazon S3.<br><br>';
+                        
                         $uploaded_file_path   = 'http://'.$bucket.'.s3.amazonaws.com/'.$new_image_name;
-                        $file_upload_message .= '<b>Upload File URL:</b>'.$uploaded_file_path.'<br/>';
-                        $file_upload_message .= "<img src='$uploaded_file_path'/>";
 
                         $post   = new PostModel();
                         $result = $post->create_post($title, $description, $price, $quantity, $product_status, $uploaded_file_path, $email);
-                    } else {
-                        $file_upload_message = '<br>File upload to amazon s3 failed!. Please try again.';
-                    }
-                } else {
-                    $file_upload_message = '<br>Maximum allowed image upload size is 1 MB.';
-                }//end if
-            } else {
-                $file_upload_message = '<br>This file format is not allowed, please upload only image file.';
-            }//end if
-        } else {
-            $file_upload_message = '<br>Please select image file to upload.';
-        }//end if
+                    } 
+                } 
+            } 
+        } 
 }//end if
 
-    require '../views/post_form.view.php';
+require '../views/post_form.view.php';

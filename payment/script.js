@@ -1,6 +1,6 @@
 // Creamos una sesion con el ID del plan seleccionado 
 var createCheckoutSession = function(priceId) {
-    return fetch("/create-checkout-session.php", {
+    return fetch("create-checkout-session.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,7 +22,7 @@ var createCheckoutSession = function(priceId) {
   };
   
   /* Obtenemos nuestra publishable key de Stripe para inicializar Stripe.js */
-  fetch("/config.php")
+  fetch("config.php")
     .then(function(result) {
       return result.json();
     })

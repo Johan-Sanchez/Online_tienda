@@ -110,3 +110,74 @@ body {
 .form-control {
   padding-left: 30px!important;
 }
+
+/* Subscription*/
+
+.title{
+  text-align: center;
+  font-size: 56px;
+  line-height: 58px;
+  margin-top: 1%;
+  font-weight: 700;
+}
+.container-sub{
+  margin: 5% ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height:100vh ;
+  margin-right: 0;
+}
+
+.inner-container{
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:  0 0 20px 1px rgba(0, 0, 0, 0.4);
+  height: 70%;
+  width: 30%;
+  text-align: center;
+  
+}
+
+
+.inner-container > button{
+  padding: 10px 32px;
+  border: none;
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 999px;
+  background: rgba(30, 34, 33, 1);
+  color: white;
+}
+
+.inner-container > button:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.inner-container >h4{
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+.inner-container >h1{
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.inner-container >h1{
+  font-size: 24px;
+}
+.inner-container >p{
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
