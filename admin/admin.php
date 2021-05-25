@@ -1,13 +1,9 @@
 <?php session_start();
     require 'config.php';
     require '../functions.php';
-
-    $conexion = conexion();
-
-if ($conexion === false) {
-    header('Location: error.php');
-}
-
+    require_once '../db/db.php';
+  
+    $conexion =  Conectar::conexion();
     $statement = $conexion->prepare('SELECT * FROM posts');
     $statement->execute();
     $resultados = $statement->fetchAll();

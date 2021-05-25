@@ -7,7 +7,7 @@
     # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 
     if (isset($_SESSION['admin'])) {
-        header('Location: index.php');
+        header('Location: admin.php');
         die();
     }
     // Comprobamos si ya han sido enviado los datos
@@ -30,7 +30,7 @@
             if ($resultado !== false) {
 
                 $_SESSION['admin'] = $user_name;
-                header('Location: index.php');
+                header('Location: ../admin.view.php');
 
             } else {
                 

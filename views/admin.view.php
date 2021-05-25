@@ -55,7 +55,7 @@
 
                     <tr>
                         <td><span><?php echo $post['id'] ?></span><br></td>
-                        <td><span><?php echo $post['title'] ?></span><br></td>
+                        <td><input type="text" value=<?php echo $post['title'] ?>><br></td>
                         <td><span><?php echo $post['description'] ?></span><br></td>
                         <td><span><?php echo '$' . $post['price'] ?></span><br></td>
                         <td><input type="submit" name="editar" value="Editar"></td>
