@@ -11,8 +11,8 @@
   <!-- JS, Popper.js, and jQuery -->
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <script src="<?php ROUTE ?>js/jquery-3.5.1.js"></script>
-  <script src="<?php ROUTE ?>js/bootstrap.min.js"></script>
+  <script src="<?php ROUTE; ?>js/jquery-3.5.1.js"></script>
+  <script src="<?php ROUTE; ?>js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../css2/mujer.css" />
 </head>
 
@@ -26,12 +26,17 @@
 
       </div>
       <div class="top-right-header">
-        <?php 
-            if (isset($_SESSION['usuario'])){
-            echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-            }else{
-              echo  '<a href="../controllers/user_controller.php"><i class="fas fa-sign-in-alt"></i>Iniciar Sesion</a>';
-            }        
+        <?php
+        if (isset($_SESSION['subscription_id']) && isset($_SESSION['subscription_status'])) {
+            echo '<a href="Location: http://localhost:4242">Subscribete</a>';
+        }
+
+        if (isset($_SESSION['usuario'])) {
+            echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+        } else {
+            echo '<a href="../controllers/user_controller.php">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
+        }
         ?>
       </div>
     </nav>

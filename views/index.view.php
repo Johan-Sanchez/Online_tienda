@@ -25,15 +25,21 @@
         <a href="<?php ROUTE ?>controllers/partners_controller.php">Fundaciones</a>
         <a href="<?php ROUTE ?>controllers/new_post_controller.php">Publicar Producto</a>
       </div>
+
       <div class="top-right-header">
-        <?php 
-          if (isset($_SESSION['usuario'])){
-           echo  '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>';
-          }else{
-            echo  '<a href="controllers/user_controller.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
-          }     
-        ?>
-        
+          <?php
+
+          if (isset($_SESSION['subscription_id']) && isset($_SESSION['subscription_status'])) {
+              echo '<a href="Location: http://localhost:4242">Subscribete</a>';
+          }
+
+          if (isset($_SESSION['usuario'])) {
+              echo '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+          } else {
+              echo '<a href="../controllers/user_controller.php">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
+          }
+          ?>
       </div>
     </nav>
     <div class="contenedor-head">

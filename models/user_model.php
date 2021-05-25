@@ -48,13 +48,13 @@ class UserModel
 
         $statement->execute(
             [
-                ':name'            => $name,
-                ':last_name'       => $last_name,
-                ':email'           => $email,
-                ':genre'           => $gender,
-                ':nick_name'       => $nick_name,
-                ':phone'           => $phone,
-                ':password'        => $password,
+                ':name'      => $name,
+                ':last_name' => $last_name,
+                ':email'     => $email,
+                ':genre'     => $gender,
+                ':nick_name' => $nick_name,
+                ':phone'     => $phone,
+                ':password'  => $password,
             ]
         );
 
@@ -66,7 +66,6 @@ class UserModel
         $statement = $this->conexion->prepare(
             'UPDATE user SET subscription_id = :subscription_id, status = :status
              WHERE email = :email'
-
         );
 
         $statement->execute(
@@ -78,6 +77,17 @@ class UserModel
         );
 
     }//end update_user()
+
+
+    public function get_subscription($email)
+    {
+        $statement = $this->conexion->prepare('SELECT subscription_id, status FROM user WHERE email = :email');
+        $statement->execute([':email' => $email]);
+        $resultado = $statement->fetch();
+
+        return $resultado;
+
+    }//end get_subscription_id()
 
 
 }//end class
