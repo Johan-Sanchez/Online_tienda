@@ -10,8 +10,31 @@ class PostModel{
     }
 
     public function get_posts(){
-        $statement = $this->conexion->prepare("SELECT * FROM posts");
+        $statement = $this->conexion->prepare("SELECT * FROM posts WHERE status_post = true");
         $statement->execute();
+        $resultados = $statement->fetchAll();
+        
+        return $resultados;
+    }
+
+    public function get_by_product_type($product_type){
+
+        $statement = $this->conexion->prepare("SELECT * FROM posts WHERE product_type = :product_type AND status_post = true");
+        $statement->execute(array(
+            ':product_type' => $product_type
+        ));
+        $resultados = $statement->fetchAll();
+        
+        return $resultados;
+    }
+
+    public function get_by_category($category){
+
+        $statement = $this->conexion->prepare("SELECT * FROM posts WHERE category = :category AND status_post = true");
+        $statement->execute(array(
+            ':category' => $category
+        ));
+
         $resultados = $statement->fetchAll();
         
         return $resultados;
@@ -31,15 +54,17 @@ class PostModel{
         return $resultado;
     }
 
-    function create_post($title, $description, $price, $quantity, $product_status,$thumb, $email) {
-		$statement = $this->conexion->prepare('INSERT INTO posts (id, title, description, price, quantity, product_status, thumb) 
-											 VALUES (null, :title, :description, :price, :quantity, :product_status, :thumb)'
+    function create_post($title, $description, $price, $quantity, $category, $product_type,$product_status,$thumb, $email) {
+		$statement = $this->conexion->prepare('INSERT INTO posts (id, title, description, price, quantity,category,product_type, product_status, thumb) 
+											 VALUES (null, :title, :description, :price, :quantity, :category, :product_type, :product_status, :thumb)'
                                              );
         $statement->execute(array(
             'title' => $title,
             'description' => $description,
             'price' => (int) $price,
             'quantity' => (int) $quantity,
+            'category' => (int)$category,
+            'product_type' => (int)$product_type,
             'product_status' => $product_status,
             'thumb' => $thumb
         ));

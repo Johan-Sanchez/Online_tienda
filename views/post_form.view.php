@@ -50,6 +50,18 @@
                     <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
                     <input type="text" class="form-control" name="precio" placeholder="Precio">
                     <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
+                    <select name="categoria" id="" class="form_select">
+                        <option value="" selected></option>
+                        <option value="1" >Hombre</option>
+                        <option value="2">Mujer</option>
+                    </select>
+                    <select name="tipo_prod" id="" class="form_select">
+                        <option value="" selected></option>
+                        <option  value="1">Camisa</option>
+                        <option  value="2">Pantalon</option>
+                        <option  value="3">Zapatos</option>
+                        <option  value="4">Chaqueta</option>
+                    </select>
                     <input type="text" name="condicion" class="form-control" placeholder="Condicion del Articulo">
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">

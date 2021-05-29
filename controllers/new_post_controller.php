@@ -25,8 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description         = $_POST['descripcion'];
     $price               = $_POST['precio'];
     $quantity            = $_POST['cantidad'];
+    $category            = $_POST['categoria'];
+    $product_type        = $_POST['tipo_prod'];
     $product_status      = $_POST['condicion'];
     $email               = $_SESSION['usuario'];
+
+    
 
     $file_name              = $_FILES['thumb']['name'];
         $file_size          = $_FILES['thumb']['size'];
@@ -64,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $uploaded_file_path   = 'http://'.$bucket.'.s3.amazonaws.com/'.$new_image_name;
 
                         $post   = new PostModel();
-                        $result = $post->create_post($title, $description, $price, $quantity, $product_status, $uploaded_file_path, $email);
+                        $result = $post->create_post($title, $description, $price, $quantity,$category,$product_type, $product_status, $uploaded_file_path, $email);
                     } 
                 } 
             } 

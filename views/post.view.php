@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>seccion hombre</title>
+  <title>Publicaciones</title>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
@@ -12,6 +12,8 @@
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../css2/mujer.css" />
+  <script src="../filtering.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/jquery-3.5.1.js"></script>
 
 </head>
@@ -27,8 +29,8 @@
       <div class="top-right-header">
           <?php
 
-          if (isset($_SESSION['subscription_id']) && isset($_SESSION['subscription_status'])) {
-              echo '<a href="Location: http://localhost:4242">Subscribete</a>';
+          if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
+              echo '<a href="./payment/index.php">Subscribete</a>';
           }
 
           if (isset($_SESSION['usuario'])){
@@ -47,15 +49,19 @@
   </header>
   <a name="mujer"></a>
   <div class="wrap">
-    <h1>Sección Hombre</h1>
+    <h1>Publicaciones</h1>
 
     <div class="store-mujer">
       <div class="category">
-        <a href="#store-mujer" class="category-items" category-all="all">All</a>
-        <a href="#store-mujer" class="category-items" category-all="camisas">Camisas</a>
-        <a href="#store-mujer" class="category-items" category-all="pantalones">Pantalones</a>
-        <a href="#store-mujer" class="category-items" category-all="chaquetas">Chaquetas</a>
-        <a href="#store-mujer" class="category-items" category-all="zapatos">zapatos</a>
+        <h2 class="category-title"> Filtrar por: </h2>
+        <a href="#" onclick="return filtering(this)" value="all" class="category-items" >All</a>
+        <a href="#" onclick="return filtering(this)" value="hombre" class="category-items" >Hombre</a>
+        <a href="#" onclick="return filtering(this)" value="mujer" class="category-items" >Mujer</a>
+        <a href="#" onclick="return filtering(this)" value="camisa" class="category-items" >Camisas</a>
+        <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items" >Pantalones</a>
+        <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items" >Chaquetas</a>
+        <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items" >zapatos</a>
+        <?php echo $product_type?>
       </div>
       <section class="lista">
 
@@ -67,7 +73,7 @@
             </div>
 
             <div class="derecha">
-              <span><?php echo $post['title'] ?></span><br>
+              <span><?php echo $post['title'] ?><?php echo $category ?></span><br>
               <span><?php echo $post['description'] ?></span><br>
               <span><?php echo '$' . $post['price'] ?></span><br>
 

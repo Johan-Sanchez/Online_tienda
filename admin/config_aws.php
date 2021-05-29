@@ -1,7 +1,8 @@
 <?php
 require '../vendor/autoload.php';
 
-$credentials = new Aws\Credentials\Credentials('AKIAXAVALMVZHM2GJHR5', 'ynxm+Op4kMPVmAKkvDWAeZ4QDdEVy9erkQBs0y66');
+$config = parse_ini_file('../config.ini');
+$credentials = new Aws\Credentials\Credentials($config['public_key'],$config['private_key'] );
 
 $s3 = new Aws\S3\S3Client(
     [

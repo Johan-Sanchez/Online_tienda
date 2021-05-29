@@ -79,6 +79,16 @@ body {
   border-radius: 10px;
 }
 
+.category .category-title{
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  color:inherit;
+  text-align: center;
+  border: 2px solid var(--white) ;
+}
+
+
 .dropdown-menu a{
   color: black;
   background-color: transparent;
@@ -225,7 +235,7 @@ img {
     width: 15%;
     font-size: 14px;
   }
-
+  
   .lista.products_item {
     margin-left: 4.5%;
   }
