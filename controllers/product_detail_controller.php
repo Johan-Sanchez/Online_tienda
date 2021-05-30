@@ -8,10 +8,10 @@ if (!isset($_SESSION['usuario'])) {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $product_id = $_POST['id'];
+        $post_id = $_POST['id'];
     
         $post = new PostModel();
-        $resultado = $post->get_post_by_user($product_id);
+        $resultado = $post->get_post_by_user($post_id);
         // echo var_dump($resultado);
         require '../views/product_detail.view.php';
     }

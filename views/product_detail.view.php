@@ -73,7 +73,6 @@
               <li><strong>Celular: </strong><?php echo $resultado->phone ?></li>
             </ul>
           </div>
-
         </div>
       </section>
     </div>

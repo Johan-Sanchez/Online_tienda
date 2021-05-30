@@ -17,6 +17,16 @@ class PostModel{
         return $resultados;
     }
 
+    public function get_post_by_id($post_id) {
+        $statement = $this->conexion->prepare("SELECT * FROM posts WHERE id = :post_id");
+        $statement->execute(array(
+            ':post_id' => $post_id
+        ));
+        $resultados = $statement->fetchObject();
+
+        return $resultados;
+}
+
     public function get_by_product_type($product_type){
 
         $statement = $this->conexion->prepare("SELECT * FROM posts WHERE product_type = :product_type AND status_post = true");
@@ -91,5 +101,31 @@ class PostModel{
 
 	}
 
+	public function update_post($id, $title, $description, $price, $quantity, $category, $product_type,$product_status) {
+
+        $statement = $this->conexion->prepare(
+            'UPDATE posts SET title=:title, description=:description, price=:price, quantity=:quantity,
+                                            category=:category, product_type=:product_type, product_status=:product_status
+                                            WHERE id=:id');
+        $result = $statement->execute(array(
+            ':id' => (int) $id,
+            ':title' => $title,
+            ':description' =>  $description,
+            ':price' =>  (int) $price,
+            ':quantity' =>  (int) $quantity,
+            ':category' =>  $category,
+            ':product_type' =>  $product_type,
+            ':product_status' =>  $product_status
+        ));
+        return $result;
+    }
+
+    public function delete_post($id) {
+        $statement = $this->conexion->prepare(
+            'UPDATE posts SET status_post = 0 WHERE id=:id');
+        $result = $statement->execute(array(
+            ':id' => (int) $id
+        ));
+        return $result;
+    }
 }
-?>

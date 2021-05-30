@@ -60,7 +60,7 @@
         <a href="#" onclick="return filtering(this)" value="camisa" class="category-items" >Camisas</a>
         <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items" >Pantalones</a>
         <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items" >Chaquetas</a>
-        <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items" >zapatos</a>
+        <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items" >Zapatos</a>
         <?php echo $product_type?>
       </div>
       <section class="lista">
