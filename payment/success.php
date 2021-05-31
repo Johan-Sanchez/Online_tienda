@@ -35,33 +35,12 @@
           </div>
         </div>
         <div class="sr-content">
-        <div class="pasha-image-stack">
-          <img
-            src="https://picsum.photos/280/320?random=1"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=2"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=3"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=4"
-            width="140"
-            height="160"
-          />
-        </div>
+       
       </div>
 
         <form action="../controllers/user_subscription_controller.php" id="formulario" method="post">
-          <input type="hidden" id="stripeSub" name="subs">
-          <input type="hidden" id="payment-status" name="payment_status">
+          <input type="text" id="stripeSub" name="subs">
+          <input type="text" id="payment-status" name="payment_status">
           <input type="submit" value="Enviar" id="btn-sub">
         </form>
 

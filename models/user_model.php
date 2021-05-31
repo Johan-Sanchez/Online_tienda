@@ -90,4 +90,32 @@ class UserModel
     }//end get_subscription_id()
 
 
+    // funcion actualizar usuario
+
+    public function update_user_profile($id, $email, $nick_name, $phone, $status, $subscription_id) {
+        $statement = $this->conexion->prepare(
+            'UPDATE user SET email = :email, nick_name = :nick_name, phone = :phone,
+                                            status = :status,
+                                            subscription_id = :subscription_id
+                                            WHERE id = :id');
+
+        $result = $statement->execute(array(
+            ':id'    => $id,
+            ':email' =>  $email,
+            ':nick_name' =>  $nick_name,
+            ':phone' =>  $phone,
+            ':status' => $status,
+            ':subscription_id' => $subscription_id
+        ));
+        return $result;
+    }
+
+    function get_user($email) {
+        $statement = $this->conexion->prepare('SELECT * FROM user WHERE email = :email LIMIT 1');
+        $statement->execute([':email' => $email]);
+
+        $resultado = $statement->fetchObject();
+
+        return $resultado;
+    }
 }//end class

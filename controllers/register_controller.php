@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gender     = $_POST['genero'];
     $email      = $_POST['correo'];
     $nick_name  = filter_var(strtolower($_POST['nick_name']), FILTER_SANITIZE_STRING);
-        $phone  = $_POST['phone'];
+    $phone  = $_POST['phone'];
     $password   = $_POST['password'];
     $password_2 = $_POST['password2'];
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($errores == '') {
         $user->create_user($name, $last_name, $email, $gender, $nick_name, $phone, $password);
 
-        header('Location: http://localhost:4242');
+        header('Location: ../index.php');
     }
 }//end if
 

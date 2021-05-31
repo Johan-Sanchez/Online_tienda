@@ -7,7 +7,6 @@ $post = new PostModel();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_id = $_POST['id'];
-
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];

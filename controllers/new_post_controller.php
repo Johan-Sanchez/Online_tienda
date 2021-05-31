@@ -14,7 +14,7 @@ $email = $_SESSION['usuario'];
 $resultado = $user->validate_user($email);
 
 if($resultado['subscription_id'] === NULL){
-    header('Location: ./payment/index.php');
+    header('Location: ../payment/index.php');
     die();
 }
 

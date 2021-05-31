@@ -31,13 +31,13 @@
     <div class="post">
         <article>
             <h2 class="titulo">Nuevo Articulo</h2>
-            <form action="../controllers/delete_post_controller.php" enctype="multipart/form-data" class="formulario" method="post">
+            <form action="../controllers/post_admin_controller.php" enctype="multipart/form-data" class="formulario" method="post">
                 <h2 class="subtitulo">Editar Producto</h2>
                 <input type="hidden" name="id" value="<?php  echo $resultado->id?>">
                 <input type="text" class="form-control" name="titulo" value="<?php echo $resultado->title ?>">
-                <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" value="<?php echo $resultado->description ?>"></textarea>
+                <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" value=""><?php echo $resultado->description ?></textarea>
                 <input type="text" class="form-control" name="precio" value="<?php echo $resultado->price ?>">
-                <input type="text" class="form-control" name="cantidad">
+                <input type="text" class="form-control" name="cantidad" value="<?php echo $resultado->quantity ?>">
                 <select name="categoria" id="" class="form_select" >
                     <option value="1" <?php echo $resultado->category === 'hombre' ? 'selected' : '' ?> >Hombre</option>
                     <option value="2" <?php echo $resultado->category === 'mujer' ? 'selected' : '' ?>>Mujer</option>

@@ -54,8 +54,7 @@ var createCheckoutSession = function(priceId) {
             // Llamamos al metodo Stripe.js para redireccionar a la nueva pagina Checkout
             stripe
               .redirectToCheckout({
-                sessionId: data.sessionId,
-                  stripeData: data,
+                sessionId: data.sessionId
               })
               .then(handleResult);
           });

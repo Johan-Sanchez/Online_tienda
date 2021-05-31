@@ -35,10 +35,7 @@
     <div class="post_admin">
         <h1>Posts</h1>
 
-
         <section class="post_admin">
-
-
 
             <table border="1">
                 <tr>
@@ -55,13 +52,12 @@
                             <br>
                         </td>
                         <td>
-                            <input name="title" value="<?php echo $post['title'] ?>" readonly/>
+                            <?php echo $post['title'] ?>
                             <br>
                         </td>
 
-                            <input type="hidden" name="descripcion" value="<?php echo $post['description'] ?>" readonly>
                         <td>
-                            <input name="price" value="<?php echo '$' . $post['price'] ?>" readonly/>
+                            <?php echo '$' . $post['price'] ?>
                             <br>
                         </td>
                         <td>
