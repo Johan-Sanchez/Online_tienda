@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resultado = $user->update_user_profile($id, $email, $nick_name, $phone, $status, $subscription_id);
     }
     
-    $resultado;
+    $resultado = $user->get_user($email);
 }
 
 

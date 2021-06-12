@@ -105,7 +105,7 @@ body {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   
 }
 .lista_detail{
@@ -207,7 +207,6 @@ img {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
 }
 

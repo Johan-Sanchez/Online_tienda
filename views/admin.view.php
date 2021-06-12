@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>seccion hombre</title>
+    <title>Panel Administrador</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
@@ -15,40 +15,45 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php ROUTE ?>../css2/mujer.css" />
+    <link rel="stylesheet" href="<?php ROUTE ?>../css2/registro.css" />
     <script src="<?php ROUTE ?>../admin/script.js"></script>
 </head>
 
 <body>
-    <header class="header" id="inicio">
-        <nav class="menu-navegacion">
-           
+    
+    <div class="header_admin" id="inicio">
+        <nav class="menu-admin">
+            <div>
+             <a href="../admin/admin.php"><h2>OldNewLooK</h2></a>
+            </div>
+
             <div class="top-right-header" >
-                <a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+                <a href="../admin/cerrar_admin.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+                <a href="../admin/admin_profile.php"><i class="fas fa-user fa-lg"></i></a>
             </div>
         </nav>
-        <div class="contenedor-head">
-            <h1 class="titulo"><a href="<?php ROUTE ?>index.php">OldNewLooK</a></h1>
-            <p class="copy">Te ves bien salvando el planeta</p>
-        </div>
-    </header>
+        
+    </div>
+   
 
     <div class="post_admin">
-        <h1>Posts</h1>
+        <h1>Publicaciones</h1>
 
         <section class="post_admin">
 
             <table border="1">
                 <tr>
-                    <td><strong>ID</strong></td>
-                    <td><strong>Title</strong></td>
-                    <td><strong>Price</strong></td>
-                    <td><strong>Editar</strong></td>
+                    <td class="column-title"><strong>ID</strong></td>
+                    <td class="column-title"><strong>Titulo</strong></td>
+                    <td class="column-title"><strong>Precio</strong></td>
+                    <td class="column-title"><strong>Categoria</strong></td>
+                    <td class="column-title"><strong>Editar</strong></td>
                 </tr>
                 <?php foreach ($resultados as $post) : ?>
 
                     <tr>
                         <td>
-                            <input name="id" value="<?php echo $post['id'] ?>" readonly/>
+                            <?php echo $post['id'] ?>
                             <br>
                         </td>
                         <td>
@@ -61,9 +66,13 @@
                             <br>
                         </td>
                         <td>
+                            <?php echo $post['category'] ?>
+                            <br>
+                        </td>
+                        <td>
                             <form action="../controllers/edit_post_controller.php" id="formulario" method="post">
                                 <input type="hidden" name="id" value="<?php echo $post['id'] ?>"/>
-                                <input class="accion" type="submit" name="editar" value="editar"/>
+                                <input class="accion" type="submit" name="editar" value="Editar"/>
                             </form>
                     </tr>
                 <?php endforeach; ?>

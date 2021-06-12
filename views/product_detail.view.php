@@ -26,11 +26,20 @@
         <a href="../controllers/new_post_controller.php">Publicar Producto</a>
       </div>
       <div class="top-right-header">
-        <?php
-        if (isset($_SESSION['usuario'])) {
-          echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-        }
-        ?>
+          <?php
+
+          if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
+              echo '<a href="./payment/index.php">Subscribete</a>';
+          }
+
+          if (isset($_SESSION['usuario'])) {
+              echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+              echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
+          } else {
+              echo '<a href="controllers/user_controller.php">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
+          }
+          ?>
       </div>
     </nav>
     <div class="contenedor-head">
@@ -82,6 +91,9 @@
       <div class="contact-us">
         <h2 class="brand">NewOldLooK</h2>
         <p>Comprometidos con el Planeta</p>
+        <span>Contactanos:</span><br>
+        <span><i class='bx bx-mail-send'></i> oldnewlook@gmail.com</span><br>
+        <span><i class='bx bxl-whatsapp'></i> 311-800-000</span>
       </div>
       <div class="social-media">
         <a href="https://www.facebook.com/" class="social-media-icon">

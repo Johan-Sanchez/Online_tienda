@@ -28,11 +28,16 @@
 
             </div>
             <div class="top-right-header">
-            <?php          
-                if (isset($_SESSION['usuario'])){
-                echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-                }        
-            ?>
+                <?php
+
+                if (isset($_SESSION['usuario'])) {
+                    echo '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+                    echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
+                } else {
+                    echo '<a href="controllers/user_controller.php">
+                                <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
+                }
+                ?>
             </div>
         </nav>
         <div class="contenedor-head">
@@ -47,30 +52,36 @@
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data" class="formulario" method="post">
                     <h2 class="subtitulo">Publicar Producto</h2>
                     <input type="text" class="form-control" name="titulo" placeholder="Titulo de la publicacion">
-                    <textarea id="" class="form-control" cols="30" rows="5" name="descripcion" placeholder="Descripcion del articulo"></textarea>
+                    <textarea id="" class="form-control" cols="30" rows="5" 
+                            name="descripcion" 
+                            placeholder="Describe detalladamente el articulo (color, talla, marca,...)"
+                    ></textarea>
                     <input type="text" class="form-control" name="precio" placeholder="Precio">
                     <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
-                    <select name="categoria" id="" class="form_select">
-                        <option value="" selected></option>
+                    <label for=""><strong>Categoria:</strong></label>
+                    <select name="categoria" id=""  class="form_select">
                         <option value="1" >Hombre</option>
                         <option value="2">Mujer</option>
+                        <option value="3">Niño</option>
+                        <option value="4">Niña</option>
                     </select>
+                    <label for=""><strong>Tipo Producto:</strong></label>
                     <select name="tipo_prod" id="" class="form_select">
-                        <option value="" selected></option>
                         <option  value="1">Camisa</option>
                         <option  value="2">Pantalon</option>
                         <option  value="3">Zapatos</option>
                         <option  value="4">Chaqueta</option>
+                        <option value="5">Bermuda</option>
+                        <option value="6">Blue-Jean</option>
+                        <option value="7">Sandalias</option>
+                        <option value="8">Gorras</option>
                     </select>
-                    <input type="text" name="condicion" class="form-control" placeholder="Condicion del Articulo">
+                    <label for=""><strong>Condicion Artículo:</strong></label>
+                    <input type="text" name="condicion" class="form-control" placeholder="nuevo,usado,poco uso, reparado,...">
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>
                 <?php 
-
-                if($file_upload_message) {
-                    echo $file_upload_message;
-                }
                 
                 if (isset($result)){
                     if ($result == true){   
@@ -89,6 +100,9 @@
             <div class="contact-us">
                 <h2 class="brand">NewOldLooK</h2>
                 <p>Comprometidos con el Planeta</p>
+                <span>Contactanos:</span><br>
+                <span><i class='bx bx-mail-send'></i> oldnewlook@gmail.com</span><br>
+                <span><i class='bx bxl-whatsapp'></i> 311-800-000</span>
             </div>
             <div class="social-media">
                 <a href="https://www.facebook.com/" class="social-media-icon">

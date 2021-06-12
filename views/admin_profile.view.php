@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil Usuario</title>
+    <title>Perfil Administrador</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
@@ -13,33 +13,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="../css2/mujer.css" />
     <link rel="stylesheet" href="../css2/registro.css" />
-    <script src="../payment/cancel.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
 
 </head>
 
 <body>
 
-    <header class="header" id="inicio">
-        <nav class="menu-navegacion">
-            <div class="top-left-header">
-                <a href="../controllers/post_controller.php">Catálogo</a>
-                <a href="../controllers/partners_controller.php">Fundaciones</a>
-                <a href="../controllers/new_post_controller.php">Publicar Producto</a>
+    <div class="header_admin" id="inicio">
+        <nav class="menu-admin">
+            <div>
+                <a href="../admin/admin.php"><h2>OldNewLooK</h2></a>
             </div>
-            <div class="top-right-header">
-                <?php
-                if (isset($_SESSION['usuario'])) {
-                    echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-                }
-                ?>
+            
+            <div class="top-right-header" >
+                <a href="../admin/cerrar_admin.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+                <a href="../admin/admin_profile.php"><i class="fas fa-user fa-lg"></i></a>
             </div>
         </nav>
-        <div class="contenedor-head">
-            <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
-            <p class="copy">Te ves bien salvando el planeta</p>
-        </div>
-    </header>
+        
+    </div>
 
     <div class="wrap">
         <h1>Configuracion de cuenta</h1>
@@ -69,33 +61,38 @@
                             </li>
                             <li class="info-section">
                                 <strong>Nombre de Usuario: </strong>
-                                <input type="text" class="usr-data" name="nick_name" value="<?php echo $resultado->nick_name ?>" ></input>
+                                <input type="text" class="usr-data" name="user_name" value="<?php echo $resultado->user_name ?>" ></input>
                             </li>
                             <li class="info-section">
                                 <strong>Telefono:</strong>
                                 <input  type="text" class="usr-data" name="phone" value="<?php echo $resultado->phone ?>"></input>
                             </li>
-
-                            <button class="profile-submit">Actualizar</button>
-                            <input type="hidden" id="subscription-status" name="subscription-status">
                         </ul>
                     </div>
                     <div class="inner_right">
-                        <h4>Información De Suscripcion</h4>
+                        <h4>Modificar Contraseña</h4>
 
                         <ul>
-                            <li>
-                                <strong>Estado: </strong>
-                                <span id="sub-status-msg"><?php echo $resultado->status === 'paid' ? 'activa' : 'inactivo' ?> </span>
+                            <li id="admin-data" >
+                                <strong>Nueva Contraseña:</strong>
+                                <input  type="password"  name="new_password"></input><br>
+                                <strong>Confirmar Contraseña:</strong>
+                                <input  type="password"  name="confirm_password"></input><br>                       
                             </li>
-                            <li>
-                                <button id="cancel-plan-btn" class="profile-submit" style="font-size: 1rem">Cancelar Subscripción</button>                        
-                            </li>
+                            <button id="change"  class="profile-submit" style="font-size: 1rem">Modificar</button> 
+                            <button class="profile-submit">Actualizar</button>
                         </ul>
                         <div id="error-message"></div>
                     </div>
                 </div>
-
+                <?php 
+                    if (!empty($errores)) { 
+                        echo  "<script>alert('$errores'); </script>"; 
+                    }
+                ?>
+                  
+        
+                
             </section>
         </form>
 
@@ -105,7 +102,7 @@
 <footer id="contacto">
     <div class="contenedor footer-content">
         <div class="contact-us">
-            <h2 class="brand">NewOldLooK</h2>
+            <h2 class="brand">OldNewLooK</h2>
             <p>Comprometidos con el Planeta</p>
             <span>Contactanos:</span><br>
             <span><i class='bx bx-mail-send'></i> oldnewlook@gmail.com</span><br>
@@ -131,10 +128,7 @@
     </div>
     <div class="line"></div>
 </footer>
-
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+<script src="script_admin.js"></script>
 </body>
 
 </html>

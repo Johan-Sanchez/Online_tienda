@@ -27,9 +27,13 @@
       <h2 class="subtitulo">Registro</h2>
 
       <label for="" class="formulario-label">Nombre:</label>
-      <input type="text" name="nombre" class="form-control" id="nombre" required />
+      <input type="text" name="nombre" class="form-control" required />
       <label for="" class="formulario-label">Apellido:</label>
-      <input type="text" name="apellido" class="form-control" id="nombre" required />
+      <input type="text" name="apellido" class="form-control"  required />
+      <label for="" class="formulario-label">Cédula:</label>
+      <input type="text" name="cedula" class="form-control"  required />
+      <label for="" class="formulario-label">Dirección:</label>
+      <input type="text" name="direccion" class="form-control" required />
 
       <label for="" class="formulario-label">Sexo:</label>
       <input type="radio" id="male" name="genero" value="m">

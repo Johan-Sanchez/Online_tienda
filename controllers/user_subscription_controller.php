@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $subModel = new UserModel();
     $resultados = $subModel->update_user($email, $subscription_id, $payment_status);
 
-    if($resultados == true){
+    if($resultados === true){
         $_SESSION['subscription_id'] = $subscription_id;
         $_SESSION['subscription_status'] = $payment_status ;
     }

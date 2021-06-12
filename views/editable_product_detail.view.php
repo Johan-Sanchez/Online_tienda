@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="../css2/estilos.css">
     <link rel="stylesheet" href="../css2/registro.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>Editar Publicaciones</title>
 </head>
 <body>
-<header class="header" id="inicio">
-    <nav class="menu-navegacion">
-        <div class="top-left-header">
-            <a href="../controllers/post_controller.php">Catálogo</a>
-            <a href="../controllers/partners_controller.php">Fundaciones</a>
-            <a href="../controllers/new_post_controller.php">Publicar Producto</a>
 
-        </div>
-        <div class="top-right-header">
-    </nav>
-    <div class="contenedor-head">
-        <h1 class="titulo"><a href="../index.php">OldNewLooK</a></h1>
-        <p class="copy">Te ves bien salvando el planeta</p>
+    <div class="header_admin" id="inicio">
+        <nav class="menu-admin">
+        
+            <div>
+                <a href="../admin/admin.php"><h2>OldNewLooK</h2></a>
+            </div>
+
+            <div class="top-right-header" >
+                <a href="../admin/cerrar_admin.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+                <a href="../admin/admin_profile.php"><i class="fas fa-user fa-lg"></i></a>
+            </div>
+
+        </nav>
+        
     </div>
-</header>
 <div class="container">
     <div class="post">
         <article>
@@ -49,11 +51,11 @@
                     <option  value="4" <?php echo $resultado->product_type === 'chaqueta' ? 'selected' : '' ?>>Chaqueta</option>
                 </select>
                 <input type="text" name="condicion" class="form-control" placeholder="Condicion del Articulo" value="<?php echo $resultado->product_status ?>">
-                <img name="thumb" style="width: 20rem; height: 10rem;" src="<?php echo $resultado->thumb ?>" alt="product_image">
-                <div id="accion" style="display: flex;">
-                    <input type="submit" class="formulario-submit" name="accion" value="guardar">
-                    <input type="submit" class="formulario-submit" name="accion" value="eliminar">
-                </div>
+                <img name="thumb" class="img-post" src="<?php echo $resultado->thumb ?>" alt="product_image">
+                
+                <input type="submit" class="formulario-submit" name="accion" value="guardar"><br>
+                <input type="submit" class="formulario-submit" name="accion" value="eliminar">
+                
             </form>
         </article>
     </div>
@@ -61,7 +63,7 @@
 <footer id="contacto">
     <div class="contenedor footer-content">
         <div class="contact-us">
-            <h2 class="brand">NewOldLooK</h2>
+            <h2 class="brand">OldNewLooK</h2>
             <p>Comprometidos con el Planeta</p>
         </div>
         <div class="social-media">

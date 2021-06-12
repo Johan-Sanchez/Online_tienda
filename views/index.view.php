@@ -136,6 +136,9 @@
       <div class="contact-us">
         <h2 class="brand">NewOldLooK</h2>
         <p>Comprometidos con el Planeta</p>
+        <span>Contactanos:</span><br>
+        <span><i class='bx bx-mail-send'></i> oldnewlook@gmail.com</span><br>
+        <span><i class='bx bxl-whatsapp'></i> 311-800-000</span>
       </div>
       <div class="social-media">
         <a href="https://www.facebook.com/" class="social-media-icon">

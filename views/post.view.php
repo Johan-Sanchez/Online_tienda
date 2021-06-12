@@ -33,10 +33,11 @@
               echo '<a href="./payment/index.php">Subscribete</a>';
           }
 
-          if (isset($_SESSION['usuario'])){
-              echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-          }else{
-              echo  '<a href="../controllers/user_controller.php">
+          if (isset($_SESSION['usuario'])) {
+              echo '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+              echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
+          } else {
+              echo '<a href="controllers/user_controller.php">
                         <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
           }
           ?>
@@ -61,6 +62,10 @@
         <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items" >Pantalones</a>
         <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items" >Chaquetas</a>
         <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items" >Zapatos</a>
+        <a href="#" onclick="return filtering(this)" value="bermudas" class="category-items" >Bermudas</a>
+        <a href="#" onclick="return filtering(this)" value="blue-jean" class="category-items" >Blue-Jean</a>
+        <a href="#" onclick="return filtering(this)" value="sandalias" class="category-items" >Sandalias</a>
+        <a href="#" onclick="return filtering(this)" value="gorras" class="category-items" >Gorras</a>
         <?php echo $product_type?>
       </div>
       <section class="lista">
@@ -96,6 +101,9 @@
       <div class="contact-us">
         <h2 class="brand">NewOldLooK</h2>
         <p>Comprometidos con el Planeta</p>
+        <span>Contactanos:</span><br>
+        <span><i class='bx bx-mail-send'></i> oldnewlook@gmail.com</span><br>
+        <span><i class='bx bxl-whatsapp'></i> 311-800-000</span>
       </div>
       <div class="social-media">
         <a href="https://www.facebook.com/" class="social-media-icon">

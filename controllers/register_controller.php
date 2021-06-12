@@ -11,6 +11,8 @@ if (isset($_SESSION['usuario'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name       = $_POST['nombre'];
     $last_name  = $_POST['apellido'];
+    $personal_id  = $_POST['cedula'];
+    $address  = $_POST['direccion'];
     $gender     = $_POST['genero'];
     $email      = $_POST['correo'];
     $nick_name  = filter_var(strtolower($_POST['nick_name']), FILTER_SANITIZE_STRING);
@@ -40,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($errores == '') {
-        $user->create_user($name, $last_name, $email, $gender, $nick_name, $phone, $password);
+        $user->create_user($name, $last_name, $personal_id, $address, $email, $gender, $nick_name, $phone, $password);
 
-        header('Location: ../index.php');
+        header('Location: ../controllers/user_controller.php');
     }
 }//end if
 
