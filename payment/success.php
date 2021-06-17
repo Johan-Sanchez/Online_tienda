@@ -30,8 +30,8 @@
     </div>
 
     <form action="../controllers/user_subscription_controller.php" id="formulario" method="post" class="form-payment">
-        <input type="hidden" id="stripeSub" name="subs">
-        <input type="hidden" id="payment-status" name="payment_status">
+        <input type="text" id="stripeSub" name="subs">
+        <input type="text" id="payment-status" name="payment_status">
         <input type="submit" value="Continuar" id="btn-sub" class="payment-submit">
     </form>
     

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../shop.png" />
   <title>Publicaciones</title>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
@@ -12,6 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../css2/mujer.css" />
+  <link rel="stylesheet" href="../css2/estilos.css" />
   <script src="../filtering.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/jquery-3.5.1.js"></script>
@@ -34,7 +36,7 @@
           }
 
           if (isset($_SESSION['usuario'])) {
-              echo '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+              echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
               echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
           } else {
               echo '<a href="controllers/user_controller.php">
@@ -58,6 +60,7 @@
         <a href="#" onclick="return filtering(this)" value="all" class="category-items" >All</a>
         <a href="#" onclick="return filtering(this)" value="hombre" class="category-items" >Hombre</a>
         <a href="#" onclick="return filtering(this)" value="mujer" class="category-items" >Mujer</a>
+        <a href="#" onclick="return filtering(this)" value="niña" class="category-items" >Niña</a>
         <a href="#" onclick="return filtering(this)" value="camisa" class="category-items" >Camisas</a>
         <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items" >Pantalones</a>
         <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items" >Chaquetas</a>
@@ -78,7 +81,7 @@
             </div>
 
             <div class="derecha">
-              <span><?php echo $post['title'] ?><?php echo $category ?></span><br>
+              <h2><?php echo $post['title'] ?><?php echo $category ?></h2>
               <span><?php echo $post['description'] ?></span><br>
               <span><?php echo '$' . $post['price'] ?></span><br>
 

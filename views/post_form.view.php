@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../shop.png" />
     <title>Nuevo Producto</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -31,7 +32,7 @@
                 <?php
 
                 if (isset($_SESSION['usuario'])) {
-                    echo '<a href="cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+                    echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
                     echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
                 } else {
                     echo '<a href="controllers/user_controller.php">
@@ -77,7 +78,7 @@
                         <option value="8">Gorras</option>
                     </select>
                     <label for=""><strong>Condicion Artículo:</strong></label>
-                    <input type="text" name="condicion" class="form-control" placeholder="nuevo,usado,poco uso, reparado,...">
+                    <input type="text" name="condicion" class="form-control" placeholder="usado,poco uso, reparado,...">
                     <input type="file" class="form-control-file" name="thumb">
                     <input type="submit" class="formulario-submit" value="Crear Articulo">
                 </form>

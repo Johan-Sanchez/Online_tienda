@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../shop.png" />
     <title>Perfil Usuario</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
@@ -29,6 +30,10 @@
             </div>
             <div class="top-right-header">
                 <?php
+
+                 if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
+                    echo '<a href="../payment/index.php">Subscribete</a>';
+                }
                 if (isset($_SESSION['usuario'])) {
                     echo  '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
                 }

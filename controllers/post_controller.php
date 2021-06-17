@@ -10,7 +10,7 @@
 
     if(isset($filter)){
 
-        if($filter == 'hombre' || $filter == 'mujer'){
+        if($filter == 'hombre' || $filter == 'mujer' || $filter == 'niña'){
             $resultados = $post->get_by_category($filter);
         }elseif ($filter !== 'all'){
             $resultados = $post->get_by_product_type($filter);

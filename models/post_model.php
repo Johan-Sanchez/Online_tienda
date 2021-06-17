@@ -6,7 +6,6 @@ class PostModel{
  
     public function __construct(){
         $this->conexion = Conectar::conexion();
-        $this->posts = array();
     }
 
     public function get_posts(){

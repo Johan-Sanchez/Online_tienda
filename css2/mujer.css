@@ -164,6 +164,7 @@ body {
 img {
   width: 221px;
   height: 228px;
+  margin: 10px auto;
 }
 .products-list .product-item img {
   width: 100%;
