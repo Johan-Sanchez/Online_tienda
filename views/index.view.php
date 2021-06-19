@@ -22,9 +22,9 @@
   <header class="header" id="inicio">
     <nav class="menu-navegacion">
       <div class="top-left-header">
-        <a href="<?php ROUTE ?>controllers/post_controller.php">Catálogo</a>
-        <a href="<?php ROUTE ?>controllers/partners_controller.php">Fundaciones</a>
-        <a href="<?php ROUTE ?>controllers/new_post_controller.php">Publicar Producto</a>
+        <a href="controllers/post_controller.php">Catálogo</a>
+        <a href="controllers/partners_controller.php">Fundaciones</a>
+        <a href="controllers/new_post_controller.php">Publicar Producto</a>
       </div>
 
       <div class="top-right-header">

@@ -32,7 +32,7 @@
           <?php
 
           if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
-              echo '<a href="./payment/index.php">Subscribete</a>';
+              echo '<a href="../payment/index.php">Subscribete</a>';
           }
 
           if (isset($_SESSION['usuario'])) {
@@ -53,7 +53,7 @@
   <a name="mujer"></a>
   <div class="wrap">
     <h1>Publicaciones</h1>
-
+    
     <div class="store-mujer">
       <div class="category">
         <h2 class="category-title"> Filtrar por: </h2>
@@ -69,13 +69,15 @@
         <a href="#" onclick="return filtering(this)" value="blue-jean" class="category-items" >Blue-Jean</a>
         <a href="#" onclick="return filtering(this)" value="sandalias" class="category-items" >Sandalias</a>
         <a href="#" onclick="return filtering(this)" value="gorras" class="category-items" >Gorras</a>
-        <?php echo $product_type?>
+        <!-- <?php require 'pagination.php';?>  -->
+          
       </div>
+     
       <section class="lista">
 
         <?php foreach ($resultados as $post) : ?>
           <div class="products_item" category-all="pantalones">
-
+         
             <div class="izquierda">
               <img src="<?php echo $post['thumb'] ?>" alt="" />
             </div>
@@ -83,19 +85,17 @@
             <div class="derecha">
               <h2><?php echo $post['title'] ?><?php echo $category ?></h2>
               <span><?php echo $post['description'] ?></span><br>
+              
               <span><?php echo '$' . $post['price'] ?></span><br>
 
               <form action="../controllers/product_detail_controller.php" id="form1" method="POST">
                 <input type="hidden" value=<?php echo $post['id']  ?> name="id" >
                 <input type="submit" class="formulario-submit" name="" value="Detalle" >
               </form>
-
-
             </div>
-
           </div>
+  
         <?php endforeach; ?>
-
       </section>
     </div>
   </div>

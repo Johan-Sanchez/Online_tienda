@@ -1,14 +1,6 @@
 var cancelSubscription = (pubKey) => {
-    return fetch("/Online_tienda/payment/cancel_subscription.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            pubKey: pubKey
-        })
-    }).then((result) => {
-        console.log(result)
+    return fetch("/Online_tienda/payment/cancel_subscription.php").
+    then((result) => {
         return result.json();
     });
 };
@@ -32,12 +24,11 @@ fetch("/Online_tienda/payment/config.php")
         document
             .getElementById("cancel-plan-btn")
             .addEventListener("click", (evt) => {
+                evt.preventDefault();
                 cancelSubscription(publishableKey).then((data) => {
                     // La respuesta que obtenemos es el status de la subscripcion
                     document.getElementById("subscription-status").value = 'inactivo';
                     document.getElementById('sub-status-msg').innerHTML = 'inactivo';
-                    console.log(data.subscriptionStatus)
-                    return data.subscriptionStatus
                 }).then(handleResult);
             });
 });

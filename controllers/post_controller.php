@@ -5,8 +5,9 @@
     $post = new PostModel();
 
     $filter = $_GET['filter'];
+    $post_per_page = 5;
 
-    $resultados = $post->get_posts();
+    $resultados = $post->get_posts($post_per_page);
 
     if(isset($filter)){
 

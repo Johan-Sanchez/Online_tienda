@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     if ($response) {
                         
-                        $uploaded_file_path   = 'http://'.$bucket.'.s3.amazonaws.com/'.$new_image_name;
+                        $uploaded_file_path   = 'http://d1b5gpaw22mz6s.cloudfront.net/'.$new_image_name;
 
                         $post   = new PostModel();
                         $result = $post->create_post($title, $description, $price, $quantity,$category,$product_type, $product_status, $uploaded_file_path, $email);

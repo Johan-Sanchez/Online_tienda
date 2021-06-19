@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="./script.js" defer></script>
+    <script src="./success.js" defer></script>
   </head>
 
   <body>
