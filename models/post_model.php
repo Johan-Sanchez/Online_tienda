@@ -140,11 +140,10 @@ class PostModel
         return $result;
     }
 
-    public function get_posts($post_per_page)
+    public function get_posts($post_per_page, $current_page)
     {
-        $inicio = (current_page() > 1) ? (current_page() * $post_per_page - $post_per_page) : 0;
         $sentencia = $this->conexion->prepare(
-            "SELECT SQL_CALC_FOUND_ROWS * FROM posts LIMIT {$inicio}, {$post_per_page}"
+            "SELECT SQL_CALC_FOUND_ROWS * FROM posts WHERE status_post = true LIMIT {$current_page}, {$post_per_page}"
         );
 
         $sentencia->execute();
@@ -153,12 +152,11 @@ class PostModel
 
     function number_pages($post_per_page)
     {
-        $total_post = $this->conexion->prepare('SELECT FOUND_ROWS() FROM posts as total WHERE status_post = true; ');
+        $total_post = $this->conexion->prepare('SELECT FOUND_ROWS() as total FROM posts WHERE status_post = true');
         $total_post->execute();
         $total_post = $total_post->fetch()['total'];
-
+       
         $numero_paginas = ceil($total_post / $post_per_page);
-
         return $numero_paginas;
     }
 }

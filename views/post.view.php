@@ -29,20 +29,20 @@
         <a href="../controllers/new_post_controller.php">Publicar Producto</a>
       </div>
       <div class="top-right-header">
-          <?php
+        <?php
 
-          if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
-              echo '<a href="../payment/index.php">Subscribete</a>';
-          }
+        if (!isset($_SESSION['subscription_id']) && !isset($_SESSION['subscription_status'])) {
+          echo '<a href="../payment/index.php">Subscribete</a>';
+        }
 
-          if (isset($_SESSION['usuario'])) {
-              echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
-              echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
-          } else {
-              echo '<a href="controllers/user_controller.php">
+        if (isset($_SESSION['usuario'])) {
+          echo '<a href="../cerrar.php"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>';
+          echo '<a href="../controllers/user_profile_controller.php"><i class="fas fa-user fa-lg"></i></a>';
+        } else {
+          echo '<a href="../controllers/user_controller.php">
                         <i class="fas fa-sign-in-alt"></i> Iniciar Sesion</a>';
-          }
-          ?>
+        }
+        ?>
       </div>
     </nav>
     <div class="contenedor-head">
@@ -53,31 +53,29 @@
   <a name="mujer"></a>
   <div class="wrap">
     <h1>Publicaciones</h1>
-    
+
     <div class="store-mujer">
       <div class="category">
         <h2 class="category-title"> Filtrar por: </h2>
-        <a href="#" onclick="return filtering(this)" value="all" class="category-items" >All</a>
-        <a href="#" onclick="return filtering(this)" value="hombre" class="category-items" >Hombre</a>
-        <a href="#" onclick="return filtering(this)" value="mujer" class="category-items" >Mujer</a>
-        <a href="#" onclick="return filtering(this)" value="niña" class="category-items" >Niña</a>
-        <a href="#" onclick="return filtering(this)" value="camisa" class="category-items" >Camisas</a>
-        <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items" >Pantalones</a>
-        <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items" >Chaquetas</a>
-        <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items" >Zapatos</a>
-        <a href="#" onclick="return filtering(this)" value="bermudas" class="category-items" >Bermudas</a>
-        <a href="#" onclick="return filtering(this)" value="blue-jean" class="category-items" >Blue-Jean</a>
-        <a href="#" onclick="return filtering(this)" value="sandalias" class="category-items" >Sandalias</a>
-        <a href="#" onclick="return filtering(this)" value="gorras" class="category-items" >Gorras</a>
-        <!-- <?php require 'pagination.php';?>  -->
-          
+        <a href="#" onclick="return filtering(this)" value="all" class="category-items">All</a>
+        <a href="#" onclick="return filtering(this)" value="hombre" class="category-items">Hombre</a>
+        <a href="#" onclick="return filtering(this)" value="mujer" class="category-items">Mujer</a>
+        <a href="#" onclick="return filtering(this)" value="niña" class="category-items">Niña</a>
+        <a href="#" onclick="return filtering(this)" value="camisa" class="category-items">Camisas</a>
+        <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items">Pantalones</a>
+        <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items">Chaquetas</a>
+        <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items">Zapatos</a>
+        <a href="#" onclick="return filtering(this)" value="bermudas" class="category-items">Bermudas</a>
+        <a href="#" onclick="return filtering(this)" value="blue-jean" class="category-items">Blue-Jean</a>
+        <a href="#" onclick="return filtering(this)" value="sandalias" class="category-items">Sandalias</a>
+        <a href="#" onclick="return filtering(this)" value="gorras" class="category-items">Gorras</a>
       </div>
-     
+
       <section class="lista">
 
         <?php foreach ($resultados as $post) : ?>
           <div class="products_item" category-all="pantalones">
-         
+
             <div class="izquierda">
               <img src="<?php echo $post['thumb'] ?>" alt="" />
             </div>
@@ -85,18 +83,55 @@
             <div class="derecha">
               <h2><?php echo $post['title'] ?><?php echo $category ?></h2>
               <span><?php echo $post['description'] ?></span><br>
-              
+
               <span><?php echo '$' . $post['price'] ?></span><br>
 
               <form action="../controllers/product_detail_controller.php" id="form1" method="POST">
-                <input type="hidden" value=<?php echo $post['id']  ?> name="id" >
-                <input type="submit" class="formulario-submit" name="" value="Detalle" >
+                <input type="hidden" value=<?php echo $post['id']  ?> name="id">
+                <input type="submit" class="formulario-submit" name="" value="Detalle">
               </form>
             </div>
           </div>
-  
+
         <?php endforeach; ?>
+
+
+        <div class="pagination">
+          <ul>
+            <?php
+
+            if (current_page() === 1) {
+              echo '<li class="disabled">&laquo;</li>';
+            } else {
+
+              echo '<li>';
+              echo "<a href='controllers/post_controller.php?p=" . current_page() - 1 . "'>&laquo;</a>";
+              echo '</li>';
+            }
+
+            for ($i = 1; $i <= $number_pages; $i++) {
+              if (current_page() === $i) {
+                echo '<li class="active">' . $i . '</li>';
+              } else {
+                echo '<li>';
+                echo "<a href='controllers/post_controller.php?p=" . $i . "'>" . $i . "</a>";
+                echo '</li>';
+              }
+            }
+
+            if (current_page() !== $number_pages) {
+              
+              echo '<li class="disabled">&raquo;</li>';
+            } else {
+              echo '<li>';
+              echo "<a href='controllers/post_controller.php?p=" . current_page() + 1 . "'>&raquo;</a>";
+              echo '</li>';
+            }
+            ?>
+          </ul>
+        </div>
       </section>
+
     </div>
   </div>
   <footer id="contacto">
