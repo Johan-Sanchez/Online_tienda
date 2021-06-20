@@ -105,7 +105,7 @@
             } else {
 
               echo '<li>';
-              echo "<a href='controllers/post_controller.php?p=" . current_page() - 1 . "'>&laquo;</a>";
+              echo "<a href='post_controller.php?p=" . current_page() - 1 . "'>&laquo;</a>";
               echo '</li>';
             }
 
@@ -114,7 +114,7 @@
                 echo '<li class="active">' . $i . '</li>';
               } else {
                 echo '<li>';
-                echo "<a href='controllers/post_controller.php?p=" . $i . "'>" . $i . "</a>";
+                echo "<a href='post_controller.php?p=" . $i . "'>" . $i . "</a>";
                 echo '</li>';
               }
             }
@@ -124,7 +124,7 @@
               echo '<li class="disabled">&raquo;</li>';
             } else {
               echo '<li>';
-              echo "<a href='controllers/post_controller.php?p=" . current_page() + 1 . "'>&raquo;</a>";
+              echo "<a href='post_controller.php?p=" . current_page() + 1 . "'>&raquo;</a>";
               echo '</li>';
             }
             ?>

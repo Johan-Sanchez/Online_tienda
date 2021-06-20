@@ -438,6 +438,8 @@ footer {
 
 .pagination {
 	margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination ul {
@@ -454,18 +456,24 @@ footer {
 .pagination ul li a {
 	display: block;
 	padding:10px 20px;
-	background: #595959;
-	color:#fff;
+	background: white;
+	color:black;
+  border: 1px solid black;
+  border-radius: 10%;
 }
 
 .pagination ul li a:hover {
-	background: #BB1F35;
+	color: white;
+	background: #595959;
 	text-decoration: none;
+  border: 1px solid white;
 }
 
 .pagination ul .active {
-	background: #BB1F35;
+  color: white;
+	background: #595959;
 	padding:10px 20px;
+  border-radius: 10%;
 }
 
 .pagination ul .disabled{
