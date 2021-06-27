@@ -58,7 +58,6 @@
                             <li class="info-section">
                                 <strong>Correo: </strong>
                                 <input type="text" class="usr-data" name="email" value="<?php echo $resultado->email ?>" ></input>
-                                <span class="edit-btn" onclick="editField(event)"><i class="fas fa-edit"></i>Editar</span>
                             </li>
                             <li class="info-section">
                                 <strong>Nombre de Usuario: </strong>

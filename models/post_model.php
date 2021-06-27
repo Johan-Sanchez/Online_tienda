@@ -10,14 +10,14 @@ class PostModel
         $this->conexion = Conectar::conexion();
     }
 
-    // public function get_posts()
-    // {
-    //     $statement = $this->conexion->prepare("SELECT * FROM posts WHERE status_post = true");
-    //     $statement->execute();
-    //     $resultados = $statement->fetchAll();
+     public function get_posts_admin()
+     {
+         $statement = $this->conexion->prepare("SELECT * FROM posts WHERE status_post = true");
+         $statement->execute();
+         $resultados = $statement->fetchAll();
 
-    //     return $resultados;
-    // }
+         return $resultados;
+     }
 
     public function get_post_by_id($post_id)
     {

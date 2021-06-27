@@ -42,7 +42,7 @@
 
     <section class="inner-container ">
         <h2>Membresia Pro</h2>
-        <h4>$25.00 / año</h4>
+        <h4>$35.00 / año</h4>
         <p><strong>Tendras acceso a realizar publicaciones por el periodo de un año</strong></p>
     
       <button id="pro-plan-btn">Suscribirse</button>

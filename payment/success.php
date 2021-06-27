@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../shop.png" />
     <title>Success</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -20,11 +21,10 @@
       
       <div class="">
           <h1>Tu Subscripción Fue Realizada Exitosamente</h1>
-          <h4>Datos Subscripción</h4>
       </div>
       <div class="">
-
-        </div>
+        <img class="img-success" src="../img/suscripcion-exitosa.png" alt="">
+      </div>
       </div>
 
     </div>

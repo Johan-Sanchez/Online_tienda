@@ -65,7 +65,7 @@
         <a href="#" onclick="return filtering(this)" value="pantalon" class="category-items">Pantalones</a>
         <a href="#" onclick="return filtering(this)" value="chaqueta" class="category-items">Chaquetas</a>
         <a href="#" onclick="return filtering(this)" value="zapatos" class="category-items">Zapatos</a>
-        <a href="#" onclick="return filtering(this)" value="bermudas" class="category-items">Bermudas</a>
+        <a href="#" onclick="return filtering(this)" value="bermuda" class="category-items">Bermudas</a>
         <a href="#" onclick="return filtering(this)" value="blue-jean" class="category-items">Blue-Jean</a>
         <a href="#" onclick="return filtering(this)" value="sandalias" class="category-items">Sandalias</a>
         <a href="#" onclick="return filtering(this)" value="gorras" class="category-items">Gorras</a>
